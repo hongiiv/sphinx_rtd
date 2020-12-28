@@ -85,8 +85,8 @@ html_sidebars = {
 extensions.append("sphinx_material")
 html_theme_path = sphinx_material.html_theme_path()
 html_context = sphinx_material.get_html_context()
-#html_theme = "sphinx_material"
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_material"
+#html_theme = "sphinx_rtd_theme"
 
 # material theme options (see theme.conf for more information)
 html_theme_options = {
