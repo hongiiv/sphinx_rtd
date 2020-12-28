@@ -1,0 +1,41 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}로드맵}{3}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}시작하기}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}NumPy Docstrings}{6}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Markdown}{6}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Body copy}{6}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Headings}{6}{subsection.2.2.2}% 
+\contentsline {subsubsection}{The 3rd level}{6}{subsubsection*.3}% 
+\contentsline {paragraph}{The 4th level}{6}{paragraph*.4}% 
+\contentsline {subparagraph}{The 5th level}{6}{subparagraph*.5}% 
+\contentsline {subparagraph}{The 6th level}{6}{subparagraph*.6}% 
+\contentsline {subsection}{\numberline {2.2.3}Headings with secondary text}{6}{subsection.2.2.3}% 
+\contentsline {subsubsection}{The 3rd level with secondary text}{6}{subsubsection*.7}% 
+\contentsline {paragraph}{The 4th level with secondary text}{6}{paragraph*.8}% 
+\contentsline {subparagraph}{The 5th level with secondary text}{6}{subparagraph*.9}% 
+\contentsline {subparagraph}{The 6th level with secondary text}{7}{subparagraph*.10}% 
+\contentsline {subsection}{\numberline {2.2.4}Blockquotes}{7}{subsection.2.2.4}% 
+\contentsline {subsubsection}{Blockquote nesting}{7}{subsubsection*.11}% 
+\contentsline {subsubsection}{Other content blocks}{7}{subsubsection*.12}% 
+\contentsline {subsection}{\numberline {2.2.5}Lists}{7}{subsection.2.2.5}% 
+\contentsline {subsubsection}{Unordered lists}{7}{subsubsection*.13}% 
+\contentsline {subsubsection}{Ordered lists}{8}{subsubsection*.14}% 
+\contentsline {subsubsection}{Definition lists}{8}{subsubsection*.15}% 
+\contentsline {subsection}{\numberline {2.2.6}Code blocks}{9}{subsection.2.2.6}% 
+\contentsline {subsubsection}{Inline}{9}{subsubsection*.16}% 
+\contentsline {subsubsection}{Listing}{9}{subsubsection*.17}% 
+\contentsline {subsection}{\numberline {2.2.7}Horizontal rules}{9}{subsection.2.2.7}% 
+\contentsline {subsection}{\numberline {2.2.8}Data tables}{9}{subsection.2.2.8}% 
+\contentsline {section}{\numberline {2.3}rst Cheatsheet}{10}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Inline Markup}{10}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Escaping with Backslashes}{11}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}Lists}{13}{subsection.2.3.3}% 
+\contentsline {subsection}{\numberline {2.3.4}Section Structure}{14}{subsection.2.3.4}% 
+\contentsline {subsection}{\numberline {2.3.5}Blocks}{16}{subsection.2.3.5}% 
+\contentsline {subsection}{\numberline {2.3.6}Tables}{17}{subsection.2.3.6}% 
+\contentsline {subsection}{\numberline {2.3.7}Explicit Markup}{17}{subsection.2.3.7}% 
+\contentsline {subsection}{\numberline {2.3.8}Credits}{19}{subsection.2.3.8}% 
+\contentsline {section}{\numberline {2.4}Change Log}{19}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}License}{19}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Index}{20}{section.2.6}% 
+\contentsline {chapter}{Bibliography}{21}{chapter*.21}% 
