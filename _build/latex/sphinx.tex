@@ -49,6 +49,147 @@
 \setcounter{tocdepth}{1}
 
 
+% Jupyter Notebook code cell colors
+\definecolor{nbsphinxin}{HTML}{307FC1}
+\definecolor{nbsphinxout}{HTML}{BF5B3D}
+\definecolor{nbsphinx-code-bg}{HTML}{F5F5F5}
+\definecolor{nbsphinx-code-border}{HTML}{E0E0E0}
+\definecolor{nbsphinx-stderr}{HTML}{FFDDDD}
+% ANSI colors for output streams and traceback highlighting
+\definecolor{ansi-black}{HTML}{3E424D}
+\definecolor{ansi-black-intense}{HTML}{282C36}
+\definecolor{ansi-red}{HTML}{E75C58}
+\definecolor{ansi-red-intense}{HTML}{B22B31}
+\definecolor{ansi-green}{HTML}{00A250}
+\definecolor{ansi-green-intense}{HTML}{007427}
+\definecolor{ansi-yellow}{HTML}{DDB62B}
+\definecolor{ansi-yellow-intense}{HTML}{B27D12}
+\definecolor{ansi-blue}{HTML}{208FFB}
+\definecolor{ansi-blue-intense}{HTML}{0065CA}
+\definecolor{ansi-magenta}{HTML}{D160C4}
+\definecolor{ansi-magenta-intense}{HTML}{A03196}
+\definecolor{ansi-cyan}{HTML}{60C6C8}
+\definecolor{ansi-cyan-intense}{HTML}{258F8F}
+\definecolor{ansi-white}{HTML}{C5C1B4}
+\definecolor{ansi-white-intense}{HTML}{A1A6B2}
+\definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+\definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+% Define an environment for non-plain-text code cell outputs (e.g. images)
+\makeatletter
+\newenvironment{nbsphinxfancyoutput}{%
+    % Avoid fatal error with framed.sty if graphics too long to fit on one page
+    \let\sphinxincludegraphics\nbsphinxincludegraphics
+    \nbsphinx@image@maxheight\textheight
+    \advance\nbsphinx@image@maxheight -2\fboxsep   % default \fboxsep 3pt
+    \advance\nbsphinx@image@maxheight -2\fboxrule  % default \fboxrule 0.4pt
+    \advance\nbsphinx@image@maxheight -\baselineskip
+\def\nbsphinxfcolorbox{\spx@fcolorbox{nbsphinx-code-border}{white}}%
+\def\FrameCommand{\nbsphinxfcolorbox\nbsphinxfancyaddprompt\@empty}%
+\def\FirstFrameCommand{\nbsphinxfcolorbox\nbsphinxfancyaddprompt\sphinxVerbatim@Continues}%
+\def\MidFrameCommand{\nbsphinxfcolorbox\sphinxVerbatim@Continued\sphinxVerbatim@Continues}%
+\def\LastFrameCommand{\nbsphinxfcolorbox\sphinxVerbatim@Continued\@empty}%
+\MakeFramed{\advance\hsize-\width\@totalleftmargin\z@\linewidth\hsize\@setminipage}%
+\lineskip=1ex\lineskiplimit=1ex\raggedright%
+}{\par\unskip\@minipagefalse\endMakeFramed}
+\makeatother
+\newbox\nbsphinxpromptbox
+\def\nbsphinxfancyaddprompt{\ifvoid\nbsphinxpromptbox\else
+    \kern\fboxrule\kern\fboxsep
+    \copy\nbsphinxpromptbox
+    \kern-\ht\nbsphinxpromptbox\kern-\dp\nbsphinxpromptbox
+    \kern-\fboxsep\kern-\fboxrule\nointerlineskip
+    \fi}
+\newlength\nbsphinxcodecellspacing
+\setlength{\nbsphinxcodecellspacing}{0pt}
+
+% Define support macros for attaching opening and closing lines to notebooks
+\newsavebox\nbsphinxbox
+\makeatletter
+\newcommand{\nbsphinxstartnotebook}[1]{%
+    \par
+    % measure needed space
+    \setbox\nbsphinxbox\vtop{{#1\par}}
+    % reserve some space at bottom of page, else start new page
+    \needspace{\dimexpr2.5\baselineskip+\ht\nbsphinxbox+\dp\nbsphinxbox}
+    % mimick vertical spacing from \section command
+      \addpenalty\@secpenalty
+      \@tempskipa 3.5ex \@plus 1ex \@minus .2ex\relax
+      \addvspace\@tempskipa
+      {\Large\@tempskipa\baselineskip
+             \advance\@tempskipa-\prevdepth
+             \advance\@tempskipa-\ht\nbsphinxbox
+             \ifdim\@tempskipa>\z@
+               \vskip \@tempskipa
+             \fi}
+    \unvbox\nbsphinxbox
+    % if notebook starts with a \section, prevent it from adding extra space
+    \@nobreaktrue\everypar{\@nobreakfalse\everypar{}}%
+    % compensate the parskip which will get inserted by next paragraph
+    \nobreak\vskip-\parskip
+    % do not break here
+    \nobreak
+}% end of \nbsphinxstartnotebook
+
+\newcommand{\nbsphinxstopnotebook}[1]{%
+    \par
+    % measure needed space
+    \setbox\nbsphinxbox\vbox{{#1\par}}
+    \nobreak % it updates page totals
+    \dimen@\pagegoal
+    \advance\dimen@-\pagetotal \advance\dimen@-\pagedepth
+    \advance\dimen@-\ht\nbsphinxbox \advance\dimen@-\dp\nbsphinxbox
+    \ifdim\dimen@<\z@
+      % little space left
+      \unvbox\nbsphinxbox
+      \kern-.8\baselineskip
+      \nobreak\vskip\z@\@plus1fil
+      \penalty100
+      \vskip\z@\@plus-1fil
+      \kern.8\baselineskip
+    \else
+      \unvbox\nbsphinxbox
+    \fi
+}% end of \nbsphinxstopnotebook
+
+% Ensure height of an included graphics fits in nbsphinxfancyoutput frame
+\newdimen\nbsphinx@image@maxheight % set in nbsphinxfancyoutput environment
+\newcommand*{\nbsphinxincludegraphics}[2][]{%
+    \gdef\spx@includegraphics@options{#1}%
+    \setbox\spx@image@box\hbox{\includegraphics[#1,draft]{#2}}%
+    \in@false
+    \ifdim \wd\spx@image@box>\linewidth
+      \g@addto@macro\spx@includegraphics@options{,width=\linewidth}%
+      \in@true
+    \fi
+    % no rotation, no need to worry about depth
+    \ifdim \ht\spx@image@box>\nbsphinx@image@maxheight
+      \g@addto@macro\spx@includegraphics@options{,height=\nbsphinx@image@maxheight}%
+      \in@true
+    \fi
+    \ifin@
+      \g@addto@macro\spx@includegraphics@options{,keepaspectratio}%
+    \fi
+    \setbox\spx@image@box\box\voidb@x % clear memory
+    \expandafter\includegraphics\expandafter[\spx@includegraphics@options]{#2}%
+}% end of "\MakeFrame"-safe variant of \sphinxincludegraphics
+\makeatother
+
+\makeatletter
+\renewcommand*\sphinx@verbatim@nolig@list{\do\'\do\`}
+\begingroup
+\catcode`'=\active
+\let\nbsphinx@noligs\@noligs
+\g@addto@macro\nbsphinx@noligs{\let'\PYGZsq}
+\endgroup
+\makeatother
+\renewcommand*\sphinxbreaksbeforeactivelist{\do\<\do\"\do\'}
+\renewcommand*\sphinxbreaksafteractivelist{\do\.\do\,\do\:\do\;\do\?\do\!\do\/\do\>\do\-}
+\makeatletter
+\fvset{codes*=\sphinxbreaksattexescapedchars\do\^\^\let\@noligs\nbsphinx@noligs}
+\makeatother
+
+
 \usepackage[titles]{tocloft}
 \cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
 \setlength{\cftchapnumwidth}{0.75cm}
@@ -57,7 +198,7 @@
 
 
 \title{사용자 매뉴얼}
-\date{Dec 28, 2020}
+\date{Dec 29, 2020}
 \release{0.0.32+6.g3c3d153.dirty}
 \author{Changbum Hong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -76,7 +217,7 @@
 
 \chapter{Customization}
 \label{\detokenize{customization:customization}}\label{\detokenize{customization:id1}}\label{\detokenize{customization::doc}}
-\noindent\sphinxincludegraphics{{screenshot}.png}
+\noindent\sphinxincludegraphics[width=1320\sphinxpxdimen,height=825\sphinxpxdimen]{{screenshot}.png}
 
 안녕하세요. 반갑습니다. 고객 레코드는 파트너 센터에서 가장 중요 한 정보 자산 중 하나입니다. 고객 계정의 데이터베이스를 검색 하거나, 전체 고객 데이터베이스를 내보내거나, 하위 집합을 Excel과 호환 되는 쉼표로 구분 된 값 파일 형식 (.csv)으로 내보낼 수 있습니다. 고객의 구독 정보를 .csv 파일로 내보낼 수도 있습니다.
 활동 로그는 또한 고객에 대 한 트랜잭션 및 관리 작업에 대해 내보낼 수 있는 데이터를 제공 합니다. 자세한 내용은 고객 활동 로그 보기를 참조 하세요.
@@ -105,8 +246,8 @@ options are:
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{repo\PYGZus{}url}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{https://github.com/bashtage/sphinx\PYGZhy{}material/}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{repo\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Material for Sphinx}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{google\PYGZus{}analytics\PYGZus{}account}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{UA\PYGZhy{}XXXXX}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{html\PYGZus{}minify}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{True}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{css\PYGZus{}minify}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{True}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{html\PYGZus{}minify}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k+kc}{True}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{css\PYGZus{}minify}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k+kc}{True}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nav\PYGZus{}title}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Material Sphinx Demo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{logo\PYGZus{}icon}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZam{}\PYGZsh{}xe869}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{globaltoc\PYGZus{}depth}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{2}
@@ -463,7 +604,7 @@ eget volutpat libero.
 \fvset{hllines={, 8,}}%
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kd}{var} \PYG{n+nx}{\PYGZus{}extends} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{source} \PYG{o}{=} \PYG{n+nx}{arguments}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{;}
     \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{key} \PYG{k}{in} \PYG{n+nx}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
       \PYG{n+nx}{target}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{source}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]}\PYG{p}{;}
@@ -555,7 +696,7 @@ mi.
 \fvset{hllines={, 1,}}%
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kd}{var} \PYG{n+nx}{\PYGZus{}extends} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{source} \PYG{o}{=} \PYG{n+nx}{arguments}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{;}
     \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{key} \PYG{k}{in} \PYG{n+nx}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
       \PYG{n+nx}{target}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{source}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]}\PYG{p}{;}
@@ -616,7 +757,7 @@ lacus.
 \fvset{hllines={, 1, 5, 8,}}%
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kd}{var} \PYG{n+nx}{\PYGZus{}extends} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{arguments}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{source} \PYG{o}{=} \PYG{n+nx}{arguments}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{;}
     \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{key} \PYG{k}{in} \PYG{n+nx}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
       \PYG{n+nx}{target}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{source}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]}\PYG{p}{;}
@@ -960,25 +1101,420 @@ Pellentesque in enim leo.
 
 \subsection{Default Alignment}
 \label{\detokenize{specimen:default-alignment}}
-\noindent\sphinxincludegraphics{{desert-flower}.jpg}
+\noindent\sphinxincludegraphics[width=512\sphinxpxdimen,height=366\sphinxpxdimen]{{desert-flower}.jpg}
 
 
 \subsection{Center Alignment}
 \label{\detokenize{specimen:center-alignment}}
-\noindent{\hspace*{\fill}\sphinxincludegraphics[scale=0.8]{{desert-flower}.jpg}\hspace*{\fill}}
+\noindent{\hspace*{\fill}\sphinxincludegraphics[width=409.60000\sphinxpxdimen,height=292.80000\sphinxpxdimen]{{desert-flower}.jpg}\hspace*{\fill}}
 
 
 \subsection{Right Alignment}
 \label{\detokenize{specimen:right-alignment}}
-\noindent{\hspace*{\fill}\sphinxincludegraphics[scale=0.6]{{desert-flower}.jpg}}
+\noindent{\hspace*{\fill}\sphinxincludegraphics[width=307.20000\sphinxpxdimen,height=219.60000\sphinxpxdimen]{{desert-flower}.jpg}}
 
 
-\chapter{NumPy Docstrings}
-\label{\detokenize{numpydoc:numpy-docstrings}}\label{\detokenize{numpydoc::doc}}
-This page shows how \sphinxcode{\sphinxupquote{autosummary}} works with \sphinxcode{\sphinxupquote{numpydoc}} and a
-NumPy\sphinxhyphen{}style docstring.
+\chapter{Jupyter Notebooks}
+\label{\detokenize{notebook:Jupyter-Notebooks}}\label{\detokenize{notebook::doc}}
+The \sphinxhref{https://github.com/spatialaudio/nbsphinx}{nbsphinx extension}%
+\begin{footnote}[5]\sphinxAtStartFootnote
+\sphinxnolinkurl{https://github.com/spatialaudio/nbsphinx}
+%
+\end{footnote} allow notebooks to be seemlessly integrated into a Sphinx website. This page demonstrates how notebooks are rendered.
 
-\#    notebook.ipynb
+
+\section{DataFrames}
+\label{\detokenize{notebook:DataFrames}}
+pandas DataFrames are rendered with useful markup.
+
+{
+\sphinxsetup{VerbatimColor={named}{nbsphinx-code-bg}}
+\sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\llap{\color{nbsphinxin}[1]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ints}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}
+                   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{floats}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{+}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,}
+                   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{strings}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{aardvark}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{bananarama}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{charcuterie}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+
+\PYG{n}{df}
+\end{sphinxVerbatim}
+}
+
+{
+
+\kern-\sphinxverbatimsmallskipamount\kern-\baselineskip
+\kern+\FrameHeightAdjust\kern-\fboxrule
+\vspace{\nbsphinxcodecellspacing}
+
+\sphinxsetup{VerbatimColor={named}{white}}
+\sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\llap{\color{nbsphinxout}[1]:\,\hspace{\fboxrule}\hspace{\fboxsep}}   ints    floats      strings
+0     1  3.141593     aardvark
+1     2  2.718282   bananarama
+2     3  1.618034  charcuterie
+\end{sphinxVerbatim}
+}
+
+
+\section{Plots and Figures}
+\label{\detokenize{notebook:Plots-and-Figures}}
+matplotlib can be used to produce plots in notebooks
+
+This example comes from the \sphinxhref{https://matplotlib.org/3.1.1/gallery/ticks\_and\_spines/colorbar\_tick\_labelling\_demo.html\#sphx-glr-gallery-ticks-and-spines-colorbar-tick-labelling-demo-py}{matplotlib gallery}%
+\begin{footnote}[6]\sphinxAtStartFootnote
+\sphinxnolinkurl{https://matplotlib.org/3.1.1/gallery/ticks\_and\_spines/colorbar\_tick\_labelling\_demo.html\#sphx-glr-gallery-ticks-and-spines-colorbar-tick-labelling-demo-py}
+%
+\end{footnote}.
+
+{
+\sphinxsetup{VerbatimColor={named}{nbsphinx-code-bg}}
+\sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\llap{\color{nbsphinxin}[2]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{o}{\PYGZpc{}}\PYG{k}{matplotlib} inline
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{matplotlib} \PYG{k+kn}{import} \PYG{n}{cm}
+
+\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{,}\PYG{l+m+mi}{8}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{n}{data} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{clip}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{l+m+mi}{250}\PYG{p}{,} \PYG{l+m+mi}{250}\PYG{p}{)}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+\PYG{n}{cax} \PYG{o}{=} \PYG{n}{ax}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{interpolation}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nearest}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{cmap}\PYG{o}{=}\PYG{n}{cm}\PYG{o}{.}\PYG{n}{coolwarm}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Gaussian noise with vertical colorbar}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{tick\PYGZus{}params}\PYG{p}{(}\PYG{n}{labelsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Add colorbar, make sure to specify tick locations to match desired ticklabels}
+\PYG{n}{cbar} \PYG{o}{=} \PYG{n}{fig}\PYG{o}{.}\PYG{n}{colorbar}\PYG{p}{(}\PYG{n}{cax}\PYG{p}{,} \PYG{n}{ticks}\PYG{o}{=}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{cbar}\PYG{o}{.}\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}yticklabels}\PYG{p}{(}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZlt{} \PYGZhy{}1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZgt{} 1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} vertically oriented colorbar}
+\PYG{n}{cbar}\PYG{o}{.}\PYG{n}{ax}\PYG{o}{.}\PYG{n}{tick\PYGZus{}params}\PYG{p}{(}\PYG{n}{labelsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+\end{sphinxVerbatim}
+}
+
+\hrule height -\fboxrule\relax
+\vspace{\nbsphinxcodecellspacing}
+
+\makeatletter\setbox\nbsphinxpromptbox\box\voidb@x\makeatother
+
+\begin{nbsphinxfancyoutput}
+
+\noindent\sphinxincludegraphics[width=583\sphinxpxdimen,height=489\sphinxpxdimen]{{notebook_4_0}.png}
+
+\end{nbsphinxfancyoutput}
+
+
+\chapter{Markdown}
+\label{\detokenize{markdown:markdown}}\label{\detokenize{markdown::doc}}
+Sphinx can be configured to use markdown using the \sphinxhref{https://github.com/readthedocs/recommonmark}{recommonmark}%
+\begin{footnote}[7]\sphinxAtStartFootnote
+\sphinxnolinkurl{https://github.com/readthedocs/recommonmark}
+%
+\end{footnote}
+extension. recommonmark is strict and does not natively support tables or common extensions
+to markdown.
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Body copy}
+\label{\detokenize{markdown:body-copy}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero,
+mollis sed massa vel, \sphinxstyleemphasis{ornare viverra ex}. Mauris a ullamcorper lacus. Nullam
+urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales
+pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan
+tempor.
+
+\sphinxstylestrong{Sed suscipit}, orci non pretium pretium, quam mi gravida metus, vel
+venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum
+eros. {\hyperref[\detokenize{markdown:}]{\emph{Nulla aliquam}}} orci sit amet nisl posuere malesuada. Proin aliquet
+nulla velit, quis ultricies orci feugiat et. \sphinxcode{\sphinxupquote{Ut tincidunt sollicitudin}}
+tincidunt. Aenean ullamcorper sit amet nulla at interdum.
+
+
+\section{Headings}
+\label{\detokenize{markdown:headings}}
+
+\subsection{The 3rd level}
+\label{\detokenize{markdown:the-3rd-level}}
+
+\subsubsection{The 4th level}
+\label{\detokenize{markdown:the-4th-level}}
+
+\paragraph{The 5th level}
+\label{\detokenize{markdown:the-5th-level}}
+
+\subparagraph{The 6th level}
+\label{\detokenize{markdown:the-6th-level}}
+
+\section{Headings with secondary text}
+\label{\detokenize{markdown:headings-small-with-secondary-text-small}}
+
+\subsection{The 3rd level with secondary text}
+\label{\detokenize{markdown:the-3rd-level-small-with-secondary-text-small}}
+
+\subsubsection{The 4th level with secondary text}
+\label{\detokenize{markdown:the-4th-level-small-with-secondary-text-small}}
+
+\paragraph{The 5th level with secondary text}
+\label{\detokenize{markdown:the-5th-level-small-with-secondary-text-small}}
+
+\subparagraph{The 6th level with secondary text}
+\label{\detokenize{markdown:the-6th-level-small-with-secondary-text-small}}
+
+\section{Blockquotes}
+\label{\detokenize{markdown:blockquotes}}\begin{quote}
+
+Morbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet rutrum.
+Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Nam vehicula nunc
+mauris, a ultricies libero efficitur sed. \sphinxstyleemphasis{Class aptent} taciti sociosqu ad
+litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie
+imperdiet consectetur.
+\end{quote}
+
+
+\subsection{Blockquote nesting}
+\label{\detokenize{markdown:blockquote-nesting}}\begin{quote}
+
+\sphinxstylestrong{Sed aliquet}, neque at rutrum mollis, neque nisi tincidunt nibh, vitae
+faucibus lacus nunc at lacus. Nunc scelerisque, quam id cursus sodales, lorem
+{\hyperref[\detokenize{markdown:}]{\emph{libero fermentum}}} urna, ut efficitur elit ligula et nunc.
+\end{quote}
+\begin{quote}
+\begin{quote}
+
+Mauris dictum mi lacus, sit amet pellentesque urna vehicula fringilla.
+Ut sit amet placerat ante. Proin sed elementum nulla. Nunc vitae sem odio.
+Suspendisse ac eros arcu. Vivamus orci erat, volutpat a tempor et, rutrum.
+eu odio.
+\end{quote}
+\end{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+\sphinxcode{\sphinxupquote{Suspendisse rutrum facilisis risus}}, eu posuere neque commodo a.
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec leo
+bibendum, sodales mauris ut, tincidunt massa.
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+\subsection{Other content blocks}
+\label{\detokenize{markdown:other-content-blocks}}\begin{quote}
+
+Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu
+lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,
+sit amet laoreet nibh.
+\end{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{var} \PYG{n}{\PYGZus{}extends} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{n}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{var} \PYG{n}{source} \PYG{o}{=} \PYG{n}{arguments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{target}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{source}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n}{target}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+\begin{quote}
+\begin{quote}
+
+Praesent at \sphinxcode{\sphinxupquote{:::js return target}}, sodales nibh vel, tempor felis. Fusce
+vel lacinia lacus. Suspendisse rhoncus nunc non nisi iaculis ultrices.
+Donec consectetur mauris non neque imperdiet, eget volutpat libero.
+\end{quote}
+\end{quote}
+
+
+\section{Lists}
+\label{\detokenize{markdown:lists}}
+
+\subsection{Unordered lists}
+\label{\detokenize{markdown:unordered-lists}}\begin{itemize}
+\item {} 
+Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus
+non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,
+at elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.
+\begin{itemize}
+\item {} 
+Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
+
+\item {} 
+Nam vulputate tincidunt fringilla.
+
+\item {} 
+Nullam dignissim ultrices urna non auctor.
+
+\end{itemize}
+
+\item {} 
+Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin ut
+eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at aliquam
+ac, aliquet sed mauris.
+
+\item {} 
+Nulla et rhoncus turpis. Mauris ultricies elementum leo. Duis efficitur
+accumsan nibh eu mattis. Vivamus tempus velit eros, porttitor placerat nibh
+lacinia sed. Aenean in finibus diam.
+
+\end{itemize}
+
+
+\subsection{Ordered lists}
+\label{\detokenize{markdown:ordered-lists}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Integer vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis
+elementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla
+consectetur feugiat sodales.
+
+\item {} 
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+ridiculus mus. Aliquam ornare feugiat quam et egestas. Nunc id erat et quam
+pellentesque lacinia eu vel odio.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumii}{enumiii}{}{.}%
+\item {} 
+Vivamus venenatis porttitor tortor sit amet rutrum. Pellentesque aliquet
+quam enim, eu volutpat urna rutrum a. Nam vehicula nunc mauris, a
+ultricies libero efficitur sed.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumiii}{enumiv}{}{.}%
+\item {} 
+Mauris dictum mi lacus
+
+\item {} 
+Ut sit amet placerat ante
+
+\item {} 
+Suspendisse ac eros arcu
+
+\end{enumerate}
+
+\item {} 
+Morbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet
+rutrum. Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Sed
+aliquet, neque at rutrum mollis, neque nisi tincidunt nibh.
+
+\item {} 
+Pellentesque eget \sphinxcode{\sphinxupquote{:::js var \_extends}} ornare tellus, ut gravida mi.
+
+\end{enumerate}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{var} \PYG{n}{\PYGZus{}extends} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{n}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{var} \PYG{n}{source} \PYG{o}{=} \PYG{n}{arguments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{target}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{source}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n}{target}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\item {} 
+Vivamus id mi enim. Integer id turpis sapien. Ut condimentum lobortis
+sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis
+nulla. Vivamus a pharetra leo.
+
+\end{enumerate}
+
+
+\subsection{Definition lists}
+\label{\detokenize{markdown:definition-lists}}
+\sphinxstylestrong{Not supported in commonmark, but you can use a rst definition list inside a
+fenced eval\_rst block.}
+\begin{description}
+\item[{Lorem ipsum dolor sit amet}] \leavevmode
+Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
+tellus non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor
+lobortis orci, at elementum urna sodales vitae. In in vehicula nulla.
+
+Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis. Nam
+vulputate tincidunt fringilla. Nullam dignissim ultrices urna non
+auctor.
+
+\item[{Cras arcu libero}] \leavevmode
+Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex.
+Proin ut eros sed sapien ullamcorper consequat. Nunc ligula ante,
+fringilla at aliquam ac, aliquet sed mauris.
+
+\end{description}
+
+
+\section{Code blocks}
+\label{\detokenize{markdown:code-blocks}}
+
+\subsection{Inline}
+\label{\detokenize{markdown:inline}}
+Morbi eget \sphinxcode{\sphinxupquote{dapibus felis}}. Vivamus \sphinxstyleemphasis{\sphinxcode{\sphinxupquote{venenatis porttitor}}} tortor sit amet
+rutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+per inceptos himenaeos. {\hyperref[\detokenize{markdown:}]{\emph{\sphinxcode{\sphinxupquote{Pellentesque aliquet quam enim}}}}}, eu volutpat urna
+rutrum a.
+
+Nam vehicula nunc \sphinxcode{\sphinxupquote{:::js return target}} mauris, a ultricies libero efficitur
+sed. Sed molestie imperdiet consectetur. Vivamus a pharetra leo. Pellentesque
+eget ornare tellus, ut gravida mi. Fusce vel lacinia lacus.
+
+
+\subsection{Listing}
+\label{\detokenize{markdown:listing}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{var} \PYG{n}{\PYGZus{}extends} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{n}{target}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{var} \PYG{n}{source} \PYG{o}{=} \PYG{n}{arguments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{var} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{source}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{target}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{source}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n}{target}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\section{Horizontal rules}
+\label{\detokenize{markdown:horizontal-rules}}
+Aenean in finibus diam. Duis mollis est eget nibh volutpat, fermentum aliquet
+dui mollis. Nam vulputate tincidunt fringilla. Nullam dignissim ultrices urna
+non auctor.
+
+
+\bigskip\hrule\bigskip
+
+
+Integer vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis
+elementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla
+consectetur feugiat sodales.
+
+
+\section{Data tables}
+\label{\detokenize{markdown:data-tables}}
+\sphinxstylestrong{Note}: Markdown table syntax requires \sphinxcode{\sphinxupquote{sphinx\_markdown\_tables}}
+
+
+
+Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus
+non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,
+at elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.
+
+
+
+Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu
+lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,
+sit amet laoreet nibh.
+
+
+
+\#    numpydoc
 \#    markdown.md
 \#    rst\sphinxhyphen{}cheatsheet/rst\sphinxhyphen{}cheatsheet
 

@@ -27,7 +27,7 @@ FORCE_CLASSIC = FORCE_CLASSIC in ("1", "true")
 project = "사용자 매뉴얼"
 html_title = "사용자 매뉴얼"
 
-copyright = "2019, cbhong"
+copyright = "2020, Changbum Hong"
 author = "Changbum Hong"
 
 # The full version, including alpha/beta/rc tags
@@ -40,20 +40,20 @@ release = LooseVersion(sphinx_material.__version__).vstring
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
-    #"numpydoc",
+    "numpydoc",
     "sphinx.ext.doctest",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
-    #"nbsphinx",
+    "nbsphinx",
     "recommonmark",
     "sphinx_markdown_tables",
     "sphinx_copybutton",
 ]
 
-#autosummary_generate = True
+autosummary_generate = True
 autoclass_content = "class"
 
 # Add any paths that contain templates here, relative to this directory.
@@ -91,8 +91,8 @@ html_theme = "sphinx_material"
 # material theme options (see theme.conf for more information)
 html_theme_options = {
     "base_url": "http://bashtage.github.io/sphinx-material/",
-    "repo_url": "https://github.com/bashtage/sphinx-material/",
-    "repo_name": "hi Material for Sphinx",
+    "repo_url": "https://github.com/hongiiv/sphinx_rtd/",
+    "repo_name": "hi Changbum Hong",
     "google_analytics_account": "UA-XXXXX",
     "html_minify": False,
     "html_prettify": True,

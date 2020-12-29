@@ -14,18 +14,14 @@ Welcome to documentation!
 
     customization
     specimen
+    notebook.ipynb
     numpydoc
-#    notebook.ipynb
-#    markdown.md
-#    rst-cheatsheet/rst-cheatsheet
+    markdown.md
+    rst-cheatsheet/rst-cheatsheet
+    change-log
+    license
+    
 
-#.. toctree::
-#    :caption: Changes and License
-#    :maxdepth: 2
-
-#    change-log
-#    license
-
-#Index
-#~~~~~
-#:ref:`genindex`
+Index
+~~~~~
+:ref:`genindex`

@@ -36,4 +36,30 @@
 \contentsline {subsection}{\numberline {2.11.1}Default Alignment}{13}{subsection.2.11.1}% 
 \contentsline {subsection}{\numberline {2.11.2}Center Alignment}{13}{subsection.2.11.2}% 
 \contentsline {subsection}{\numberline {2.11.3}Right Alignment}{14}{subsection.2.11.3}% 
-\contentsline {chapter}{\numberline {3}NumPy Docstrings}{15}{chapter.3}% 
+\contentsline {chapter}{\numberline {3}Jupyter Notebooks}{15}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}DataFrames}{15}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Plots and Figures}{15}{section.3.2}% 
+\contentsline {chapter}{\numberline {4}Markdown}{17}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Body copy}{17}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Headings}{17}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}The 3rd level}{17}{subsection.4.2.1}% 
+\contentsline {subsubsection}{The 4th level}{17}{subsubsection*.7}% 
+\contentsline {paragraph}{The 5th level}{17}{paragraph*.8}% 
+\contentsline {subparagraph}{The 6th level}{17}{subparagraph*.9}% 
+\contentsline {section}{\numberline {4.3}Headings with secondary text}{17}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}The 3rd level with secondary text}{17}{subsection.4.3.1}% 
+\contentsline {subsubsection}{The 4th level with secondary text}{18}{subsubsection*.10}% 
+\contentsline {paragraph}{The 5th level with secondary text}{18}{paragraph*.11}% 
+\contentsline {subparagraph}{The 6th level with secondary text}{18}{subparagraph*.12}% 
+\contentsline {section}{\numberline {4.4}Blockquotes}{18}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Blockquote nesting}{18}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Other content blocks}{18}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.5}Lists}{19}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Unordered lists}{19}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Ordered lists}{19}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Definition lists}{20}{subsection.4.5.3}% 
+\contentsline {section}{\numberline {4.6}Code blocks}{20}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Inline}{20}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Listing}{20}{subsection.4.6.2}% 
+\contentsline {section}{\numberline {4.7}Horizontal rules}{20}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Data tables}{21}{section.4.8}% 
