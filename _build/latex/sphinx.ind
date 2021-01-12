@@ -1,0 +1,84 @@
+\begin{sphinxtheindex}
+\let\lettergroup\sphinxstyleindexlettergroup
+\let\lettergroupDefault\sphinxstyleindexlettergroupDefault
+\let\spxpagem\sphinxstyleindexpagemain
+\let\spxentry\sphinxstyleindexentry
+\let\spxextra\sphinxstyleindexextra
+
+
+  \lettergroup{B}
+  \item \spxentry{basis()}\spxextra{numpy.polynomial.Polynomial class method}, \hyperpage{21}
+
+  \indexspace
+
+  \lettergroup{C}
+  \item \spxentry{cast()}\spxextra{numpy.polynomial.Polynomial class method}, \hyperpage{21}
+  \item \spxentry{convert()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{22}
+  \item \spxentry{copy()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{22}
+  \item \spxentry{cutdeg()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{23}
+
+  \indexspace
+
+  \lettergroup{D}
+  \item \spxentry{degree()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{23}
+  \item \spxentry{deriv()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{23}
+  \item \spxentry{domain}\spxextra{numpy.polynomial.Polynomial attribute}, \hyperpage{29}
+
+  \indexspace
+
+  \lettergroup{F}
+  \item \spxentry{fit()}\spxextra{numpy.polynomial.Polynomial class method}, \hyperpage{24}
+  \item \spxentry{fromroots()}\spxextra{numpy.polynomial.Polynomial class method}, \hyperpage{25}
+
+  \indexspace
+
+  \lettergroup{H}
+  \item \spxentry{has\_samecoef()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{25}
+  \item \spxentry{has\_samedomain()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{25}
+  \item \spxentry{has\_sametype()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{26}
+  \item \spxentry{has\_samewindow()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{26}
+
+  \indexspace
+
+  \lettergroup{I}
+  \item \spxentry{identity()}\spxextra{numpy.polynomial.Polynomial class method}, \hyperpage{26}
+  \item \spxentry{integ()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{27}
+
+  \indexspace
+
+  \lettergroup{L}
+  \item \spxentry{linspace()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{27}
+
+  \indexspace
+
+  \lettergroup{M}
+  \item \spxentry{mapparms()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{27}
+  \item \spxentry{maxpower}\spxextra{numpy.polynomial.Polynomial attribute}, \hyperpage{29}
+
+  \indexspace
+
+  \lettergroup{N}
+  \item \spxentry{nickname}\spxextra{numpy.polynomial.Polynomial attribute}, \hyperpage{29}
+
+  \indexspace
+
+  \lettergroup{P}
+  \item \spxentry{Polynomial}\spxextra{class in numpy.polynomial}, \hyperpage{19}
+
+  \indexspace
+
+  \lettergroup{R}
+  \item \spxentry{roots()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{28}
+
+  \indexspace
+
+  \lettergroup{T}
+  \item \spxentry{trim()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{28}
+  \item \spxentry{truncate()}\spxextra{numpy.polynomial.Polynomial method}, \hyperpage{29}
+
+  \indexspace
+
+  \lettergroup{W}
+  \item \spxentry{window}\spxextra{numpy.polynomial.Polynomial attribute}, \hyperpage{30}
+
+\end{sphinxtheindex}

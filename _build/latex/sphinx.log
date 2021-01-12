@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.14)  29 DEC 2020 15:09
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.14)  30 DEC 2020 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,15 +1199,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-(./sphinx.toc)
+(./sphinx.toc [1
+
+])
 \tf@toc=\write6
 \openout6 = `sphinx.toc'.
 
- [1
-
-] [2
-
-]
+ [2]
 Chapter 1.
 LaTeX Font Info:    Try loading font information for OT1+pzc on input line 218.
 
@@ -1222,28 +1220,27 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 218--218
 [][][][][][][][][]  
  []
 
-File: screenshot.png Graphic file (type bmp)
-<screenshot.png>
 [1
+
 
 ]
 Missing character: There is no ␣ in font Monaco/AAT!
 
 
 LaTeX Font Warning: Font shape `TU/Monaco(0)/bx/n' undefined
-(Font)              using `TU/Monaco(0)/m/n' instead on input line 249.
+(Font)              using `TU/Monaco(0)/m/n' instead on input line 327.
 
 [2]
 Missing character: There is no ␣ in font Monaco/AAT!
 Missing character: There is no ␣ in font Monaco/AAT!
-Missing character: There is no ␣ in font Monaco/AAT!
-Missing character: There is no ␣ in font Monaco/AAT!
  [3]
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
 Missing character: There is no ␣ in font Monaco/AAT!
 
 
 LaTeX Font Warning: Font shape `TU/Monaco(0)/m/it' undefined
-(Font)              using `TU/Monaco(0)/m/n' instead on input line 411.
+(Font)              using `TU/Monaco(0)/m/n' instead on input line 489.
 
 Missing character: There is no ␣ in font Monaco/AAT!
 [4] [5] [6
@@ -1251,81 +1248,81 @@ Missing character: There is no ␣ in font Monaco/AAT!
 ]
 Chapter 2.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 508--508
+Overfull \hbox (10.0pt too wide) in paragraph at lines 586--586
 [][][][][][][][][]  
  []
 
 
 LaTeX Font Warning: Font shape `TU/NanumBarunGothic(0)/m/it' undefined
-(Font)              using `TU/NanumBarunGothic(0)/m/n' instead on input line 51
-4.
+(Font)              using `TU/NanumBarunGothic(0)/m/n' instead on input line 59
+2.
 
 
-LaTeX Warning: Hyper reference `specimen:' on page 7 undefined on input line 52
-1.
+LaTeX Warning: Hyper reference `specimen:' on page 7 undefined on input line 59
+9.
 
 [7]
 
-LaTeX Warning: Hyper reference `specimen:' on page 8 undefined on input line 57
-1.
+LaTeX Warning: Hyper reference `specimen:' on page 8 undefined on input line 64
+9.
 
 Missing character: There is no ␣ in font Monaco/AAT!
 [8]
 Missing character: There is no ␣ in font Monaco/AAT!
  [9]
 
-LaTeX Warning: Hyper reference `specimen:' on page 10 undefined on input line 7
-46.
+LaTeX Warning: Hyper reference `specimen:' on page 10 undefined on input line 8
+24.
 
 Missing character: There is no ␣ in font Monaco/AAT!
 
-Underfull \hbox (badness 10000) in paragraph at lines 795--796
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
 []|\TU/NotoSansCJKKR(0)/m/n/10 Sollicitudo /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 808--809
+Underfull \hbox (badness 10000) in paragraph at lines 886--887
 []|\TU/NanumBarunGothic(0)/m/it/10 Vivamus a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--835
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 []|\TU/NanumBarunGothic(0)/m/it/10 Mauris a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--848
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
 []|\TU/NanumBarunGothic(0)/m/it/10 Nullam urna
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 860--861
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
 []|\TU/NanumBarunGothic(0)/m/it/10 Malesuada
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--887
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
 []|\TU/NanumBarunGothic(0)/m/it/10 Vestibulum
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--917
+Underfull \hbox (badness 10000) in paragraph at lines 994--995
 []|\TU/NanumBarunGothic(0)/m/it/10 Pharetra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 942--943
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1021
 []|\TU/NanumBarunGothic(0)/m/it/10 Orci non
  []
 
 [10]
 
-LaTeX Warning: Hyper reference `specimen:' on page 11 undefined on input line 9
-92.
+LaTeX Warning: Hyper reference `specimen:' on page 11 undefined on input line 1
+070.
 
 
-LaTeX Warning: Hyper reference `specimen:' on page 11 undefined on input line 9
-92.
+LaTeX Warning: Hyper reference `specimen:' on page 11 undefined on input line 1
+070.
 
 [11] [12]
 File: desert-flower.jpg Graphic file (type bmp)
@@ -1338,14 +1335,19 @@ File: desert-flower.jpg Graphic file (type bmp)
  [14]
 Chapter 3.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 1117--1117
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1195--1195
 [][][][][][][][][]  
  []
 
 Missing character: There is no ␣ in font Monaco/AAT!
 Missing character: There is no ␣ in font Monaco/AAT!
+[15
 
-Overfull \hbox (137.67683pt too wide) in paragraph at lines 1167--1170
+]
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+Overfull \hbox (137.67683pt too wide) in paragraph at lines 1353--1356
 [][][]$[][][][][] [] [] [] [][][][][][][][][][] [] [][][] [] [] [] [] [] [] [] 
 [][][][][][][] [] [][][][][] [] [][][] [] [][][][][][] [] [][][][][][][][] [] [
 ][][][] [] [][][][][][][][][] [] [][][][] [] [][][][] [] [][][][][][][][][][][]
@@ -1354,48 +1356,307 @@ Overfull \hbox (137.67683pt too wide) in paragraph at lines 1167--1170
  []
 
 Missing character: There is no ␣ in font Monaco/AAT!
-[15
+File: notebook_7_0.png Graphic file (type bmp)
+<notebook_7_0.png>
+[16] [17] [18
 
 ]
-File: notebook_4_0.png Graphic file (type bmp)
-<notebook_4_0.png>
- [16]
 Chapter 4.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 1209--1209
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1395--1395
+[][][][][][][][][]  
+ []
+
+[19] [20] [21]
+
+LaTeX Font Warning: Font shape `TU/Monaco(0)/bx/it' undefined
+(Font)              using `TU/Monaco(0)/bx/n' instead on input line 1794.
+
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 1965--1965
+[]\TU/NanumBarunGothic(0)/m/it/10 x, y, deg, domain=None, rcond=None, full=Fals
+e,
+ []
+
+[24] [25] [26] [27]
+Missing character: There is no ␣ in font Monaco/AAT!
+ [28] [29] [30]
+Chapter 5.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 2540--2540
+[][][][][][][][][]  
+ []
+
+[31
+
+] [32
+
+]
+Chapter 6.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 2559--2559
 [][][][][][][][][]  
  []
 
 
-LaTeX Warning: Hyper reference `markdown:' on page 17 undefined on input line 1
-234.
+LaTeX Warning: Hyper reference `markdown:footnote_1' on page 33 undefined on in
+put line 2585.
 
-[17
+Missing character: There is no ␣ in font Monaco/AAT!
+[33] [34] [35] [36]
+Chapter 7.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 2777--2777
+[][][][][][][][][]  
+ []
+
+
+LaTeX Warning: Hyper reference `markdown:' on page 37 undefined on input line 2
+802.
+
+[37
 
 ]
 
-LaTeX Warning: Hyper reference `markdown:' on page 18 undefined on input line 1
-285.
+LaTeX Warning: Hyper reference `markdown:' on page 38 undefined on input line 2
+853.
 
 Missing character: There is no ␣ in font Monaco/AAT!
-[18]
+[38]
 Missing character: There is no ␣ in font Monaco/AAT!
- [19]
+ [39]
 
-LaTeX Warning: Hyper reference `markdown:' on page 20 undefined on input line 1
-461.
+LaTeX Warning: Hyper reference `markdown:' on page 40 undefined on input line 3
+029.
 
 Missing character: There is no ␣ in font Monaco/AAT!
-[20] (./sphinx.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1536.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1536.
+[40] [41] [42
+
+]
+Chapter 8.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 3086--3086
+[][][][][][][][][]  
+ []
+
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+[43] [44]
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+Underfull \hbox (badness 10000) in paragraph at lines 3394--3395
+[]\TU/NanumBarunGothic(0)/m/it/10 command-line
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3396--3398
+[]\TU/NanumBarunGothic(0)/m/it/10 options can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3396--3398
+\TU/NanumBarunGothic(0)/m/it/10 have argu-
+ []
+
+
+Underfull \hbox (badness 6510) in paragraph at lines 3399--3400
+[]\TU/NanumBarunGothic(0)/m/it/10 options can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3404--3405
+[]\TU/NanumBarunGothic(0)/m/it/10 DOS/VMS-style
+ []
+
+[45] [46]
+Overfull \vbox (103.43993pt too high) has occurred while \output is active []
+
+
+[47]
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+
+Package tabulary Warning: No suitable columns! on input line 3644.
+
+
+Overfull \hbox (5.6pt too wide) in paragraph at lines 3644--3644
+[]| 
+ []
+
+[48] [49]
+Overfull \vbox (213.5594pt too high) has occurred while \output is active []
+
+
+[50]
+Missing character: There is no ␣ in font Monaco/AAT!
+
+Underfull \hbox (badness 10000) in paragraph at lines 3717--3719
+[]\TU/NanumBarunGothic(0)/m/it/10 Cells may
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3720
+[]\TU/NanumBarunGothic(0)/m/it/10 Cells may
+ []
+
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+LaTeX Warning: Hyper reference `rst-cheatsheet/rst-cheatsheet:fourth' on page 5
+1 undefined on input line 3881.
+
+
+LaTeX Warning: Hyper reference `rst-cheatsheet/rst-cheatsheet:third' on page 51
+ undefined on input line 3885.
+
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+LaTeX Warning: Hyper reference `rst-cheatsheet/rst-cheatsheet:this' on page 51 
+undefined on input line 3939.
+
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4001
+[]|[][]\TU/NanumBarunGothic(0)/m/it/10 Python[][][][][][][] is [][]my favourite
+ programming lan-
+ []
+
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+File: magnetic-balls.jpg Graphic file (type bmp)
+<magnetic-balls.jpg>
+Missing character: There is no ␣ in font Monaco/AAT!
+File: biohazard.png Graphic file (type bmp)
+<biohazard.png>
+Missing character: There is no ␣ in font Monaco/AAT!
+Missing character: There is no ␣ in font Monaco/AAT!
+[51]
+Overfull \vbox (654.85373pt too high) has occurred while \output is active []
+
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1--4125
+[][][]$[][][][] [] [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][][][][]
+[][] [] [][][][] [] [][][][][][] []
+ []
+
+File: attrib.png Graphic file (type bmp)
+<attrib.png>
+File: noncomm.png Graphic file (type bmp)
+<noncomm.png>
+File: sharealike.png Graphic file (type bmp)
+<sharealike.png>
+File: attrib.png Graphic file (type bmp)
+<attrib.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 4144--4144
+[][] \TU/NanumBarunGothic(0)/m/it/10 Based on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4144--4144
+\TU/NanumBarunGothic(0)/m/it/10 quickref.txt
+ []
+
+File: noncomm.png Graphic file (type bmp)
+<noncomm.png>
+
+Underfull \hbox (badness 6428) in paragraph at lines 4144--4144
+[][] \TU/NanumBarunGothic(0)/m/it/10 Non-
+ []
+
+
+Overfull \hbox (14.93112pt too wide) in paragraph at lines 4144--4144
+\TU/NanumBarunGothic(0)/m/it/10 Commercial| 
+ []
+
+File: sharealike.png Graphic file (type bmp)
+<sharealike.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 4144--4144
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4144--4144
+\TU/NanumBarunGothic(0)/m/it/10 Share
+ []
+
+[53] [54
+
+]
+Chapter 9.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 4149--4149
+[][][][][][][][][]  
+ []
+
+[55] [56
+
+]
+Chapter 10.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 4158--4158
+[][][][][][][][][]  
+ []
+
+[57] [58
+
+]
+Chapter 11.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 4190--4190
+[][][][][][][][][]  
+ []
+
+[59] [60
+
+] (./sphinx.ind [61
+
+] [62
+
+] [63
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4206.
  (./sphinx.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1536.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4206.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4206.
 
 Package rerunfilecheck Info: File `sphinx.out' has not changed.
-(rerunfilecheck)             Checksum: 2865FD02D928DC748991F807B360FCC1.
+(rerunfilecheck)             Checksum: 142A11BA06DB41940AE0119B90E5C389.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1405,12 +1666,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 27886 strings out of 492916
- 488429 string characters out of 6133345
- 613182 words of memory out of 5000000
- 31598 multiletter control sequences out of 15000+600000
- 541400 words of font info for 95 fonts, out of 8000000 for 9000
+ 28057 strings out of 492916
+ 496710 string characters out of 6133345
+ 688305 words of memory out of 5000000
+ 31764 multiletter control sequences out of 15000+600000
+ 541408 words of font info for 96 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 40i,12n,69p,822b,2559s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,20n,69p,822b,2559s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sphinx.pdf (25 pages).
+Output written on sphinx.pdf (67 pages).

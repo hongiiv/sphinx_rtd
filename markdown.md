@@ -1,3 +1,153 @@
+
+# Microsoft 365 docs navigation guide
+
+This topic provides some tips and tricks for navigating the Microsoft 365 technical documentation space.  
+
+## Impact to customers who don't transition
+
+The following table summarizes the impact to customers who don't transition from a Microsoft 365 Business Preview subscription to a Microsoft 365 Business subscription.
+
+|       | T-0 to T+30     | T+30 to T+60 | T+60 to T+120 | Beyond T+120  |
+|-------|-----------------|--------------|---------------|---------------|
+| **State** | In grace period | Expired      | Disabled      | Deprovisioned |
+| **Service impacts**                                                        |
+| **Microsoft 365 Business admin portal** | No impact to functionality | No impact to functionality | Can add/delete users, purchase subscriptions. Can't assign/revoke licenses. | Customer's subscription and all data is deleted. Admin can manage other paid subscriptions. |
+| **Office apps**                         | No end user impact | No end user impact | Office enters reduced functionality mode. Users can view files only. | Office enters reduced functionality mode.Users can view files only. |
+| **Cloud services (SharePoint Online, Exchange Online, Skype, Teams, and more)** | No end user impact | No end user impact | End users and admins have no access to data in the cloud. | Customer's subscription and all data are deleted. |
+| **EM+S components** | No admin impact No end user impact | No admin impact No end user impact | Capability is no longer enforced. See [Mobile device impacts upon subscription expiration](#mobile-device-impacts-upon-subscription-expiration) and [Windows 10 PC impacts upon subscription expiration](#windows-10-pc-impacts-upon-subscription-expiration) for more info. | Capability is no longer enforced. See [Mobile device impacts upon subscription expiration](#mobile-device-impacts-upon-subscription-expiration) and [Windows 10 PC impacts upon subscription expiration](#windows-10-pc-impacts-upon-subscription-expiration) for more info. |
+| **Windows 10 Business** | No admin impact No end user impact | No admin impact No end user impact | Capability is no longer enforced. See [Mobile device impacts upon subscription expiration](#mobile-device-impacts-upon-subscription-expiration) and [Windows 10 PC impacts upon subscription expiration](#windows-10-pc-impacts-upon-subscription-expiration) for more info. | Capability is no longer enforced. See [Mobile device impacts upon subscription expiration](#mobile-device-impacts-upon-subscription-expiration) and [Windows 10 PC impacts upon subscription expiration](#windows-10-pc-impacts-upon-subscription-expiration) for more info. |
+| **Azure AD login to a Windows 10 PC** | No admin impact No end user impact | No admin impact No end user impact | No admin impact No end user impact | Once the tenant is deleted, a user can sign in with local credentials only. Re-image the device if there are no local credentials. |
+
+## Hub page
+
+The Microsoft 365 hub page can be found at [https://aka.ms/microsoft365docs](https://aka.ms/microsoft365docs) and is the entry point for finding relevant Microsoft 365 content.
+
+You can always navigate back to this page by selecting **Microsoft 365** from the header at the top of every page within the Microsoft 365 technical documentation set:
+
+# JupyterLab Demo Start
+
+JupyterLab: The next generation user interface for Project Jupyter
+
+https://github.com/jupyter/jupyterlab
+
+It started as a collaboration between:
+
+* Project Jupyter
+* Bloomberg
+* (then) Continuum
+
+| asfasdfasdfasdf   | asdfasdf  | asdfasdf  | asdfasdfasdf  | asdfasdfasdfasdf  |
+|-----------------  |---------- |---------- |-------------- |------------------ |
+| 1324              | 2         | 2         | 1             | 1                 |
+| 1234              | 2         | 2         | 1             | 1                 |
+| 1234              | 2         | 2         | 2             | 1                 |
+
+## Tables
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+and now involves many other<sup>[1](#footnote_1)</sup>  people from many other places (not purely academic or business)
+
+<a name="footnote_1">1</a>: 주석
+
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+
+
+## 1) Building blocks of interactive computing
+
+### Start with the launcher
+
+
+Use it to open different activities:
+
+* Notebook
+* Console
+* Editor
+* Terminal
+
+### Notebooks
+
+* Open example notebooks to show that notebooks still work
+* Collapse input/output
+* Drag and drop cells
+
+### Demonstrate left panel plugins:
+
+* File Browser (file operations, context menu, including drag and drop)
+* Running
+* Command Palette (fuzzy searching for 'new')
+
+### Markdown example
+
+* Open `markdown_python.md` in the File Editor
+* View the rendered markdown, arrange side by side
+* Attach a Kernel/Console and run the code by selecting blocks and pressing
+  `Shift+Enter`
+
+### Arrange the building blocks in the main area
+
+The dock panel allows you to arrange the activites into an
+arbitrary layout.
+
+Tabs and single document mode allow you to focus.
+
+## 4) File handlers
+
+JupyterLab has a powerful and extensible architecture for handling a wide range of file formats:
+
+* CSV
+  - `./data/iris.csv` (small)
+  - `TCGA_Data` (small to medium)
+  - Urban_Data_Challenge: `data/big.csv`
+* Images
+  - `data/hubble.png`
+* Vega-Lite
+  - `data/vega.vl.json`
+* Open DC museum GeoJSON file from [OpenData DC](http://opendata.dc.gov/datasets/2e65fc16edc3481989d2cc17e6f8c533_54): `data/Museums_in_DC.geojson`
+* Notebook demonstrating bqplot widgets: `notebooks/bqplot.ipynb`
+
+## 5) Find and Replace
+first class support for find and replace across JupyterLab, currently supported in 
+notebooks and text files and is extensible for other widgets who wish to support it.
+
+## 6) Status Bar
+We have integrated the JupyterLab Status Bar package package into the core distribution. Extensions can add their own status to it as well 
+
+## 7) Printing
+
+A printing system allows extensions to customize how documents and activities are printed. 
+
+## 8) JupyterHub
+
+We now include the JupyterHub extension as a core JupyterLab extension, so you no longer need to install @jupyterlab/hub-extension (supporting multi-user + authentication workflows)
+
+## 9) Plugin architecture
+
+The genius of open-source is being able to shape your tools to your heart's content.
+
+Just like Jupyter is built on top of building blocks of the protocol and message spec, *you* can build on this platform for your workflow.
+
+* Everything in JupyterLab is an extension, including everything we have demoed
+* Extensions are just `npm` packages with metadata
+* Anyone can create, package, ship plugins
+* Extension can, for example:
+  - Add things to command palette, menu
+  - Add viewers for documents
+  - Expose other controls (e.g., manage a spark cluster?)
+  - Provide more capabilities to the system
+
+## What will you build?
+
+
 # Markdown
 
 Sphinx can be configured to use markdown using the [recommonmark](https://github.com/readthedocs/recommonmark)

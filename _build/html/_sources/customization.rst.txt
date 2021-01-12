@@ -1,14 +1,46 @@
 .. _customization:
 
 =============
-Customization
+Overview
 =============
 
-.. image:: images/screenshot.png
-    :alt: Material for Sphinx Screenshots
+최근 comprehensive genomic profiling을 사용한 대규모 코호트 연구들에 따르면 90\%가 유용한 alteration을 가지고 있다고 보고되고 있다\cite{Priestley:2019bp}. 엔젠바이오는 연구자들을 돕기 위해 323개의 암관련 유전자 (225 coding exon, 98 hotspot cover)를 분석하는 ONCOaccuPanel을 제공한다. small nucleotide variants(SNVs), insertions/deletions(indels), copy-number variations(CNVs), splice variants, fusions과 함께 최근 다수의 genomic loci 분석을 기반으로 하는 tumor mutational burden(TMB) and microsatellite instability(MSI) 분석을 제공한다.
 
-안녕하세요. 반갑습니다. 고객 레코드는 파트너 센터에서 가장 중요 한 정보 자산 중 하나입니다. 고객 계정의 데이터베이스를 검색 하거나, 전체 고객 데이터베이스를 내보내거나, 하위 집합을 Excel과 호환 되는 쉼표로 구분 된 값 파일 형식 (.csv)으로 내보낼 수 있습니다. 고객의 구독 정보를 .csv 파일로 내보낼 수도 있습니다.
-활동 로그는 또한 고객에 대 한 트랜잭션 및 관리 작업에 대해 내보낼 수 있는 데이터를 제공 합니다. 자세한 내용은 고객 활동 로그 보기를 참조 하세요.
+.. table::
+    :widths: 30 70
+
+    +-----------------------+----------------------------------------------------------+
+    | Variant type          | Relevant exmaples                                        |
+    +=======================+==========================================================+
+    | SNVs and indels       | KRAS G12D, EGFR exon 19 deletions, BRAF V600E            |
+    +-----------------------+----------------------------------------------------------+
+    | Fusions               | EGFR, ROS1, RET, ALK, NTRK1                              | 
+    +-----------------------+----------------------------------------------------------+
+    | Splice variants       | MET exon 14                                              | 
+    +-----------------------+----------------------------------------------------------+
+    | CNVs                  | HER2                                                     | 
+    +-----------------------+----------------------------------------------------------+ 
+    | MSI [1]_              | MSI-HIGH                                                 | 
+    +-----------------------+----------------------------------------------------------+
+    | TMB [2]_              | TMB-HIGH                                                 | 
+    +-----------------------+----------------------------------------------------------+
+
+.. [1] A numerical footnote.
+.. [2] 모든 암종에 대해서 기준값 (>23 Muts/Mb)을 제공하지만, TMB의 high/low는 암 종마다 기준값이 달라질 수 있음
+
+.. note::
+   로그인 창이 나타나지 않거나 로그인 버튼을 눌러도 연결되지 않는 경우에는 인터넷 또는 기관 내부망(인트라넷) 연결이 활성화 되었는지 확인하거나, 아이디 및 비밀번호를 올바르게 입력했는지 확인한다.
+
+.. warning::
+   1. 선택한 암종에 따라 해석(interpreation)의 tier 정보가 달라진다. 
+   2. 선택한 암종에 따라 white list가 달라진다.
+   
+   
+
+1. NGS를 수행한 RUN 이름을 입력한다.
+2. "Local Fastq Files"을 선택하여 로컬 컴퓨터의 FASTQ 파일 또는 
+   "Server Fastq Files"를 선택1하여 원격지의 FASTQ 파일을 선택한다.
+3. 분석할 FASTQ 파일을 선택한 후, 열기 버튼을 클릭한다.
 
 This theme provides a responsive Material Design theme for Sphinx
 documentation. It derives heavily from

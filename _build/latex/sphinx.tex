@@ -198,7 +198,7 @@
 
 
 \title{사용자 매뉴얼}
-\date{Dec 29, 2020}
+\date{Dec 30, 2020}
 \release{0.0.32+6.g3c3d153.dirty}
 \author{Changbum Hong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -215,23 +215,101 @@
 
 
 
-\chapter{Customization}
-\label{\detokenize{customization:customization}}\label{\detokenize{customization:id1}}\label{\detokenize{customization::doc}}
-\noindent\sphinxincludegraphics[width=1320\sphinxpxdimen,height=825\sphinxpxdimen]{{screenshot}.png}
+\chapter{Overview}
+\label{\detokenize{customization:overview}}\label{\detokenize{customization:customization}}\label{\detokenize{customization::doc}}
+최근 comprehensive genomic profiling을 사용한 대규모 코호트 연구들에 따르면 90\%가 유용한 alteration을 가지고 있다고 보고되고 있다cite\{Priestley:2019bp\}. 엔젠바이오는 연구자들을 돕기 위해 323개의 암관련 유전자 (225 coding exon, 98 hotspot cover)를 분석하는 ONCOaccuPanel을 제공한다. small nucleotide variants(SNVs), insertions/deletions(indels), copy\sphinxhyphen{}number variations(CNVs), splice variants, fusions과 함께 최근 다수의 genomic loci 분석을 기반으로 하는 tumor mutational burden(TMB) and microsatellite instability(MSI) 분석을 제공한다.
 
-안녕하세요. 반갑습니다. 고객 레코드는 파트너 센터에서 가장 중요 한 정보 자산 중 하나입니다. 고객 계정의 데이터베이스를 검색 하거나, 전체 고객 데이터베이스를 내보내거나, 하위 집합을 Excel과 호환 되는 쉼표로 구분 된 값 파일 형식 (.csv)으로 내보낼 수 있습니다. 고객의 구독 정보를 .csv 파일로 내보낼 수도 있습니다.
-활동 로그는 또한 고객에 대 한 트랜잭션 및 관리 작업에 대해 내보낼 수 있는 데이터를 제공 합니다. 자세한 내용은 고객 활동 로그 보기를 참조 하세요.
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|\X{30}{100}|\X{70}{100}|}
+\hline
+\sphinxstyletheadfamily 
+Variant type
+&\sphinxstyletheadfamily 
+Relevant exmaples
+\\
+\hline
+SNVs and indels
+&
+KRAS G12D, EGFR exon 19 deletions, BRAF V600E
+\\
+\hline
+Fusions
+&
+EGFR, ROS1, RET, ALK, NTRK1
+\\
+\hline
+Splice variants
+&
+MET exon 14
+\\
+\hline
+CNVs
+&
+HER2
+\\
+\hline
+MSI %
+\begin{footnote}[1]\sphinxAtStartFootnote
+A numerical footnote.
+%
+\end{footnote}
+&
+MSI\sphinxhyphen{}HIGH
+\\
+\hline
+TMB %
+\begin{footnote}[2]\sphinxAtStartFootnote
+모든 암종에 대해서 기준값 (>23 Muts/Mb)을 제공하지만, TMB의 high/low는 암 종마다 기준값이 달라질 수 있음
+%
+\end{footnote}
+&
+TMB\sphinxhyphen{}HIGH
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+\begin{sphinxadmonition}{note}{Note:}
+로그인 창이 나타나지 않거나 로그인 버튼을 눌러도 연결되지 않는 경우에는 인터넷 또는 기관 내부망(인트라넷) 연결이 활성화 되었는지 확인하거나, 아이디 및 비밀번호를 올바르게 입력했는지 확인한다.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{warning}{Warning:}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+선택한 암종에 따라 해석(interpreation)의 tier 정보가 달라진다.
+
+\item {} 
+선택한 암종에 따라 white list가 달라진다.
+
+\end{enumerate}
+\end{sphinxadmonition}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+NGS를 수행한 RUN 이름을 입력한다.
+
+\item {} 
+“Local Fastq Files”을 선택하여 로컬 컴퓨터의 FASTQ 파일 또는
+“Server Fastq Files”를 선택1하여 원격지의 FASTQ 파일을 선택한다.
+
+\item {} 
+분석할 FASTQ 파일을 선택한 후, 열기 버튼을 클릭한다.
+
+\end{enumerate}
 
 This theme provides a responsive Material Design theme for Sphinx
 documentation. It derives heavily from
 \sphinxhref{https://squidfunk.github.io/mkdocs-material/}{Material for MkDocs}%
-\begin{footnote}[1]\sphinxAtStartFootnote
+\begin{footnote}[3]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://squidfunk.github.io/mkdocs-material/}
 %
 \end{footnote},
 and also uses code from
 \sphinxhref{https://github.com/guzzle/guzzle\_sphinx\_theme}{Guzzle Sphinx Theme}%
-\begin{footnote}[2]\sphinxAtStartFootnote
+\begin{footnote}[4]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://github.com/guzzle/guzzle\_sphinx\_theme}
 %
 \end{footnote}.
@@ -434,7 +512,7 @@ block when changing the font.
 \item[{\sphinxcode{\sphinxupquote{fonticon}}}] \leavevmode
 Block that contains the icon font. Use this to add additional icon fonts
 (e.g., \sphinxhref{https://fontawesome.com/}{FontAwesome}%
-\begin{footnote}[3]\sphinxAtStartFootnote
+\begin{footnote}[6]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://fontawesome.com/}
 %
 \end{footnote}). You should probably call \sphinxcode{\sphinxupquote{\{\{ super() \}\}}} at
@@ -479,7 +557,7 @@ dropdown in \_older\_ versions of the documentation to reflect additional versio
 that are released later. Changing the Javascript file changes the version dropdown
 content in all versions.  This approach is used in
 \sphinxhref{https://www.statsmodels.org/}{statsmodels}%
-\begin{footnote}[4]\sphinxAtStartFootnote
+\begin{footnote}[7]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://www.statsmodels.org/}
 %
 \end{footnote}.
@@ -1117,10 +1195,118 @@ Pellentesque in enim leo.
 \chapter{Jupyter Notebooks}
 \label{\detokenize{notebook:Jupyter-Notebooks}}\label{\detokenize{notebook::doc}}
 The \sphinxhref{https://github.com/spatialaudio/nbsphinx}{nbsphinx extension}%
-\begin{footnote}[5]\sphinxAtStartFootnote
+\begin{footnote}[8]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://github.com/spatialaudio/nbsphinx}
 %
 \end{footnote} allow notebooks to be seemlessly integrated into a Sphinx website. This page demonstrates how notebooks are rendered.
+
+
+\section{facebook}
+\label{\detokenize{notebook:facebook}}
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+asfasdfasdfasdf
+&\sphinxstyletheadfamily 
+asdfasdf
+&\sphinxstyletheadfamily 
+asdfasdf
+&\sphinxstyletheadfamily 
+asdfasdfasdf
+&\sphinxstyletheadfamily 
+asdfasdfasdfasdf
+\\
+\hline
+1324
+&
+2
+&
+2
+&
+1
+&
+1
+\\
+\hline
+1234
+&
+2
+&
+2
+&
+1
+&
+1
+\\
+\hline
+1234
+&
+2
+&
+2
+&
+2
+&
+1
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+Stretch/Untouched
+&\sphinxstyletheadfamily 
+ProbDistribution
+&\sphinxstyletheadfamily 
+Accuracy
+\\
+\hline
+Stretched
+&
+Gaussian
+&
+.843
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+{
+\sphinxsetup{VerbatimColor={named}{nbsphinx-code-bg}}
+\sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\llap{\color{nbsphinxin}[1]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{HTML}\PYG{p}{,} \PYG{n}{display}
+\PYG{k+kn}{import} \PYG{n+nn}{tabulate}
+\PYG{n}{table} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sun}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{696000}\PYG{p}{,}\PYG{l+m+mi}{1989100000}\PYG{p}{]}\PYG{p}{,}
+         \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Earth}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{6371}\PYG{p}{,}\PYG{l+m+mf}{5973.6}\PYG{p}{]}\PYG{p}{,}
+         \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Moon}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1737}\PYG{p}{,}\PYG{l+m+mf}{73.5}\PYG{p}{]}\PYG{p}{,}
+         \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Mars}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{3390}\PYG{p}{,}\PYG{l+m+mf}{641.85}\PYG{p}{]}\PYG{p}{]}
+\PYG{n}{display}\PYG{p}{(}\PYG{n}{HTML}\PYG{p}{(}\PYG{n}{tabulate}\PYG{o}{.}\PYG{n}{tabulate}\PYG{p}{(}\PYG{n}{table}\PYG{p}{,} \PYG{n}{tablefmt}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{html}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\end{sphinxVerbatim}
+}
+
+{
+
+\kern-\sphinxverbatimsmallskipamount\kern-\baselineskip
+\kern+\FrameHeightAdjust\kern-\fboxrule
+\vspace{\nbsphinxcodecellspacing}
+
+\sphinxsetup{VerbatimColor={named}{white}}
+\sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+<IPython.core.display.HTML object>
+\end{sphinxVerbatim}
+}
 
 
 \section{DataFrames}
@@ -1131,7 +1317,7 @@ pandas DataFrames are rendered with useful markup.
 \sphinxsetup{VerbatimColor={named}{nbsphinx-code-bg}}
 \sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\llap{\color{nbsphinxin}[1]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\llap{\color{nbsphinxin}[2]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
 \PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
 
 \PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ints}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}
@@ -1151,7 +1337,7 @@ pandas DataFrames are rendered with useful markup.
 \sphinxsetup{VerbatimColor={named}{white}}
 \sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\llap{\color{nbsphinxout}[1]:\,\hspace{\fboxrule}\hspace{\fboxsep}}   ints    floats      strings
+\llap{\color{nbsphinxout}[2]:\,\hspace{\fboxrule}\hspace{\fboxsep}}   ints    floats      strings
 0     1  3.141593     aardvark
 1     2  2.718282   bananarama
 2     3  1.618034  charcuterie
@@ -1164,7 +1350,7 @@ pandas DataFrames are rendered with useful markup.
 matplotlib can be used to produce plots in notebooks
 
 This example comes from the \sphinxhref{https://matplotlib.org/3.1.1/gallery/ticks\_and\_spines/colorbar\_tick\_labelling\_demo.html\#sphx-glr-gallery-ticks-and-spines-colorbar-tick-labelling-demo-py}{matplotlib gallery}%
-\begin{footnote}[6]\sphinxAtStartFootnote
+\begin{footnote}[9]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://matplotlib.org/3.1.1/gallery/ticks\_and\_spines/colorbar\_tick\_labelling\_demo.html\#sphx-glr-gallery-ticks-and-spines-colorbar-tick-labelling-demo-py}
 %
 \end{footnote}.
@@ -1173,7 +1359,7 @@ This example comes from the \sphinxhref{https://matplotlib.org/3.1.1/gallery/tic
 \sphinxsetup{VerbatimColor={named}{nbsphinx-code-bg}}
 \sphinxsetup{VerbatimBorderColor={named}{nbsphinx-code-border}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\llap{\color{nbsphinxin}[2]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{o}{\PYGZpc{}}\PYG{k}{matplotlib} inline
+\llap{\color{nbsphinxin}[3]:\,\hspace{\fboxrule}\hspace{\fboxsep}}\PYG{o}{\PYGZpc{}}\PYG{k}{matplotlib} inline
 
 \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
 \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
@@ -1201,15 +1387,1397 @@ This example comes from the \sphinxhref{https://matplotlib.org/3.1.1/gallery/tic
 
 \begin{nbsphinxfancyoutput}
 
-\noindent\sphinxincludegraphics[width=583\sphinxpxdimen,height=489\sphinxpxdimen]{{notebook_4_0}.png}
+\noindent\sphinxincludegraphics[width=583\sphinxpxdimen,height=489\sphinxpxdimen]{{notebook_7_0}.png}
 
 \end{nbsphinxfancyoutput}
 
 
+\chapter{NumPy Docstrings}
+\label{\detokenize{numpydoc:numpy-docstrings}}\label{\detokenize{numpydoc::doc}}
+This page shows how \sphinxcode{\sphinxupquote{autosummary}} works with \sphinxcode{\sphinxupquote{numpydoc}} and a
+NumPy\sphinxhyphen{}style docstring.
+
+
+\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{\X{1}{2}\X{1}{2}}
+\hline
+
+\endfirsthead
+
+\multicolumn{2}{c}%
+{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} continued from previous page}}}\\
+\hline
+
+\endhead
+
+\hline
+\multicolumn{2}{r}{\makebox[0pt][r]{\sphinxtablecontinued{continues on next page}}}\\
+\endfoot
+
+\endlastfoot
+
+{\hyperref[\detokenize{generated/numpy.polynomial.Polynomial:numpy.polynomial.Polynomial}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Polynomial}}}}}(coef{[}, domain, window{]})
+&
+A power series class.
+\\
+\hline
+\end{longtable}\sphinxatlongtableend\end{savenotes}
+
+
+\section{numpy.polynomial.Polynomial}
+\label{\detokenize{generated/numpy.polynomial.Polynomial:numpy-polynomial-polynomial}}\label{\detokenize{generated/numpy.polynomial.Polynomial::doc}}\index{Polynomial (class in numpy.polynomial)@\spxentry{Polynomial}\spxextra{class in numpy.polynomial}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/numpy.polynomial.Polynomial:numpy.polynomial.Polynomial}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class }}\sphinxcode{\sphinxupquote{numpy.polynomial.}}\sphinxbfcode{\sphinxupquote{Polynomial}}}{\emph{\DUrole{n}{coef}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+A power series class.
+
+The Polynomial class provides the standard Python numerical methods
+‘+’, ‘\sphinxhyphen{}‘, ‘*’, ‘//’, ‘\%’, ‘divmod’, ‘**’, and ‘()’ as well as the
+attributes and methods listed in the \sphinxtitleref{ABCPolyBase} documentation.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{coef}}] \leavevmode{[}array\_like{]}
+Polynomial coefficients in order of increasing degree, i.e.,
+\sphinxcode{\sphinxupquote{(1, 2, 3)}} give \sphinxcode{\sphinxupquote{1 + 2*x + 3*x**2}}.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}(2,) array\_like, optional{]}
+Domain to use. The interval \sphinxcode{\sphinxupquote{{[}domain{[}0{]}, domain{[}1{]}{]}}} is mapped
+to the interval \sphinxcode{\sphinxupquote{{[}window{[}0{]}, window{[}1{]}{]}}} by shifting and scaling.
+The default value is {[}\sphinxhyphen{}1, 1{]}.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}(2,) array\_like, optional{]}
+Window, see \sphinxtitleref{domain} for its use. The default value is {[}\sphinxhyphen{}1, 1{]}.
+
+\DUrole{versionmodified,added}{New in version 1.6.0.}
+
+\end{description}
+
+\end{description}\end{quote}
+\subsubsection*{Methods}
+
+
+\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{\X{1}{2}\X{1}{2}}
+\hline
+
+\endfirsthead
+
+\multicolumn{2}{c}%
+{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} continued from previous page}}}\\
+\hline
+
+\endhead
+
+\hline
+\multicolumn{2}{r}{\makebox[0pt][r]{\sphinxtablecontinued{continues on next page}}}\\
+\endfoot
+
+\endlastfoot
+
+\sphinxcode{\sphinxupquote{\_\_call\_\_}}(arg)
+&
+Call self as a function.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.basis:numpy.polynomial.Polynomial.basis}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{basis}}}}}(deg{[}, domain, window{]})
+&
+Series basis polynomial of degree \sphinxtitleref{deg}.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.cast:numpy.polynomial.Polynomial.cast}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{cast}}}}}(series{[}, domain, window{]})
+&
+Convert series to series of this class.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.convert:numpy.polynomial.Polynomial.convert}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{convert}}}}}({[}domain, kind, window{]})
+&
+Convert series to a different kind and/or domain and/or window.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.copy:numpy.polynomial.Polynomial.copy}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{copy}}}}}()
+&
+Return a copy.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.cutdeg:numpy.polynomial.Polynomial.cutdeg}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{cutdeg}}}}}(deg)
+&
+Truncate series to the given degree.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.degree:numpy.polynomial.Polynomial.degree}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{degree}}}}}()
+&
+The degree of the series.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.deriv:numpy.polynomial.Polynomial.deriv}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{deriv}}}}}({[}m{]})
+&
+Differentiate.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.fit:numpy.polynomial.Polynomial.fit}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{fit}}}}}(x, y, deg{[}, domain, rcond, full, w, window{]})
+&
+Least squares fit to data.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.fromroots:numpy.polynomial.Polynomial.fromroots}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{fromroots}}}}}(roots{[}, domain, window{]})
+&
+Return series instance that has the specified roots.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samecoef:numpy.polynomial.Polynomial.has_samecoef}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samecoef}}}}}(other)
+&
+Check if coefficients match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samedomain:numpy.polynomial.Polynomial.has_samedomain}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samedomain}}}}}(other)
+&
+Check if domains match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_sametype:numpy.polynomial.Polynomial.has_sametype}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_sametype}}}}}(other)
+&
+Check if types match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samewindow:numpy.polynomial.Polynomial.has_samewindow}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samewindow}}}}}(other)
+&
+Check if windows match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.identity:numpy.polynomial.Polynomial.identity}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{identity}}}}}({[}domain, window{]})
+&
+Identity function.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.integ:numpy.polynomial.Polynomial.integ}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{integ}}}}}({[}m, k, lbnd{]})
+&
+Integrate.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.linspace:numpy.polynomial.Polynomial.linspace}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{linspace}}}}}({[}n, domain{]})
+&
+Return x, y values at equally spaced points in domain.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.mapparms:numpy.polynomial.Polynomial.mapparms}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{mapparms}}}}}()
+&
+Return the mapping parameters.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.roots:numpy.polynomial.Polynomial.roots}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{roots}}}}}()
+&
+Return the roots of the series polynomial.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.trim:numpy.polynomial.Polynomial.trim}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{trim}}}}}({[}tol{]})
+&
+Remove trailing coefficients
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.truncate:numpy.polynomial.Polynomial.truncate}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{truncate}}}}}(size)
+&
+Truncate series to length \sphinxtitleref{size}.
+\\
+\hline
+\end{longtable}\sphinxatlongtableend\end{savenotes}
+\subsubsection*{Methods}
+
+
+\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{\X{1}{2}\X{1}{2}}
+\hline
+
+\endfirsthead
+
+\multicolumn{2}{c}%
+{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} continued from previous page}}}\\
+\hline
+
+\endhead
+
+\hline
+\multicolumn{2}{r}{\makebox[0pt][r]{\sphinxtablecontinued{continues on next page}}}\\
+\endfoot
+
+\endlastfoot
+
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.basis:numpy.polynomial.Polynomial.basis}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{basis}}}}}(deg{[}, domain, window{]})
+&
+Series basis polynomial of degree \sphinxtitleref{deg}.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.cast:numpy.polynomial.Polynomial.cast}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{cast}}}}}(series{[}, domain, window{]})
+&
+Convert series to series of this class.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.convert:numpy.polynomial.Polynomial.convert}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{convert}}}}}({[}domain, kind, window{]})
+&
+Convert series to a different kind and/or domain and/or window.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.copy:numpy.polynomial.Polynomial.copy}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{copy}}}}}()
+&
+Return a copy.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.cutdeg:numpy.polynomial.Polynomial.cutdeg}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{cutdeg}}}}}(deg)
+&
+Truncate series to the given degree.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.degree:numpy.polynomial.Polynomial.degree}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{degree}}}}}()
+&
+The degree of the series.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.deriv:numpy.polynomial.Polynomial.deriv}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{deriv}}}}}({[}m{]})
+&
+Differentiate.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.fit:numpy.polynomial.Polynomial.fit}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{fit}}}}}(x, y, deg{[}, domain, rcond, full, w, window{]})
+&
+Least squares fit to data.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.fromroots:numpy.polynomial.Polynomial.fromroots}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{fromroots}}}}}(roots{[}, domain, window{]})
+&
+Return series instance that has the specified roots.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samecoef:numpy.polynomial.Polynomial.has_samecoef}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samecoef}}}}}(other)
+&
+Check if coefficients match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samedomain:numpy.polynomial.Polynomial.has_samedomain}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samedomain}}}}}(other)
+&
+Check if domains match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_sametype:numpy.polynomial.Polynomial.has_sametype}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_sametype}}}}}(other)
+&
+Check if types match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samewindow:numpy.polynomial.Polynomial.has_samewindow}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{has\_samewindow}}}}}(other)
+&
+Check if windows match.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.identity:numpy.polynomial.Polynomial.identity}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{identity}}}}}({[}domain, window{]})
+&
+Identity function.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.integ:numpy.polynomial.Polynomial.integ}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{integ}}}}}({[}m, k, lbnd{]})
+&
+Integrate.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.linspace:numpy.polynomial.Polynomial.linspace}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{linspace}}}}}({[}n, domain{]})
+&
+Return x, y values at equally spaced points in domain.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.mapparms:numpy.polynomial.Polynomial.mapparms}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{mapparms}}}}}()
+&
+Return the mapping parameters.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.roots:numpy.polynomial.Polynomial.roots}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{roots}}}}}()
+&
+Return the roots of the series polynomial.
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.trim:numpy.polynomial.Polynomial.trim}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{trim}}}}}({[}tol{]})
+&
+Remove trailing coefficients
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.truncate:numpy.polynomial.Polynomial.truncate}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{truncate}}}}}(size)
+&
+Truncate series to length \sphinxtitleref{size}.
+\\
+\hline
+\end{longtable}\sphinxatlongtableend\end{savenotes}
+
+
+\subsection{numpy.polynomial.Polynomial.basis}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.basis:numpy-polynomial-polynomial-basis}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.basis::doc}}
+method
+\index{basis() (numpy.polynomial.Polynomial class method)@\spxentry{basis()}\spxextra{numpy.polynomial.Polynomial class method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.basis:numpy.polynomial.Polynomial.basis}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{classmethod }}\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{basis}}}{\emph{\DUrole{n}{deg}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Series basis polynomial of degree \sphinxtitleref{deg}.
+
+Returns the series representing the basis polynomial of degree \sphinxtitleref{deg}.
+
+\DUrole{versionmodified,added}{New in version 1.7.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{deg}}] \leavevmode{[}int{]}
+Degree of the basis polynomial for the series. Must be >= 0.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the array must be of the form \sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where
+\sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of the domain. If None is
+given then the class domain is used. The default is None.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the resulting array must be if the form
+\sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where \sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of
+the window. If None is given then the class window is used. The
+default is None.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+A series with the coefficient of the \sphinxtitleref{deg} term set to one and
+all others zero.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.cast}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cast:numpy-polynomial-polynomial-cast}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cast::doc}}
+method
+\index{cast() (numpy.polynomial.Polynomial class method)@\spxentry{cast()}\spxextra{numpy.polynomial.Polynomial class method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cast:numpy.polynomial.Polynomial.cast}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{classmethod }}\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{cast}}}{\emph{\DUrole{n}{series}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Convert series to series of this class.
+
+The \sphinxtitleref{series} is expected to be an instance of some polynomial
+series of one of the types supported by by the numpy.polynomial
+module, but could be some other class that supports the convert
+method.
+
+\DUrole{versionmodified,added}{New in version 1.7.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{series}}] \leavevmode{[}series{]}
+The series instance to be converted.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the array must be of the form \sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where
+\sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of the domain. If None is
+given then the class domain is used. The default is None.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the resulting array must be if the form
+\sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where \sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of
+the window. If None is given then the class window is used. The
+default is None.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+A series of the same kind as the calling class and equal to
+\sphinxtitleref{series} when evaluated.
+
+\end{description}
+
+\end{description}\end{quote}
+
+
+\sphinxstrong{See also:}
+\nopagebreak
+
+\begin{description}
+\item[{{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.convert:numpy.polynomial.Polynomial.convert}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{convert}}}}}}] \leavevmode
+similar instance method
+
+\end{description}
+
+
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.convert}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.convert:numpy-polynomial-polynomial-convert}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.convert::doc}}
+method
+\index{convert() (numpy.polynomial.Polynomial method)@\spxentry{convert()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.convert:numpy.polynomial.Polynomial.convert}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{convert}}}{\emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{kind}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Convert series to a different kind and/or domain and/or window.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}array\_like, optional{]}
+The domain of the converted series. If the value is None,
+the default domain of \sphinxtitleref{kind} is used.
+
+\item[{\sphinxstylestrong{kind}}] \leavevmode{[}class, optional{]}
+The polynomial series type class to which the current instance
+should be converted. If kind is None, then the class of the
+current instance is used.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}array\_like, optional{]}
+The window of the converted series. If the value is None,
+the default window of \sphinxtitleref{kind} is used.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+The returned class can be of different type than the current
+instance and/or have a different domain and/or different
+window.
+
+\end{description}
+
+\end{description}\end{quote}
+\subsubsection*{Notes}
+
+Conversion between domains and class types can result in
+numerically ill defined series.
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.copy}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.copy:numpy-polynomial-polynomial-copy}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.copy::doc}}
+method
+\index{copy() (numpy.polynomial.Polynomial method)@\spxentry{copy()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.copy:numpy.polynomial.Polynomial.copy}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{copy}}}{}{}
+Return a copy.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+Copy of self.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.cutdeg}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cutdeg:numpy-polynomial-polynomial-cutdeg}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cutdeg::doc}}
+method
+\index{cutdeg() (numpy.polynomial.Polynomial method)@\spxentry{cutdeg()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.cutdeg:numpy.polynomial.Polynomial.cutdeg}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{cutdeg}}}{\emph{\DUrole{n}{deg}}}{}
+Truncate series to the given degree.
+
+Reduce the degree of the series to \sphinxtitleref{deg} by discarding the
+high order terms. If \sphinxtitleref{deg} is greater than the current degree a
+copy of the current series is returned. This can be useful in least
+squares where the coefficients of the high degree terms may be very
+small.
+
+\DUrole{versionmodified,added}{New in version 1.5.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{deg}}] \leavevmode{[}non\sphinxhyphen{}negative int{]}
+The series is reduced to degree \sphinxtitleref{deg} by discarding the high
+order terms. The value of \sphinxtitleref{deg} must be a non\sphinxhyphen{}negative integer.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+New instance of series with reduced degree.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.degree}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.degree:numpy-polynomial-polynomial-degree}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.degree::doc}}
+method
+\index{degree() (numpy.polynomial.Polynomial method)@\spxentry{degree()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.degree:numpy.polynomial.Polynomial.degree}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{degree}}}{}{}
+The degree of the series.
+
+\DUrole{versionmodified,added}{New in version 1.5.0.}
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{degree}}] \leavevmode{[}int{]}
+Degree of the series, one less than the number of coefficients.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.deriv}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.deriv:numpy-polynomial-polynomial-deriv}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.deriv::doc}}
+method
+\index{deriv() (numpy.polynomial.Polynomial method)@\spxentry{deriv()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.deriv:numpy.polynomial.Polynomial.deriv}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{deriv}}}{\emph{\DUrole{n}{m}\DUrole{o}{=}\DUrole{default_value}{1}}}{}
+Differentiate.
+
+Return a series instance of that is the derivative of the current
+series.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{m}}] \leavevmode{[}non\sphinxhyphen{}negative int{]}
+Find the derivative of order \sphinxtitleref{m}.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+A new series representing the derivative. The domain is the same
+as the domain of the differentiated series.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.fit}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fit:numpy-polynomial-polynomial-fit}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fit::doc}}
+method
+\index{fit() (numpy.polynomial.Polynomial class method)@\spxentry{fit()}\spxextra{numpy.polynomial.Polynomial class method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fit:numpy.polynomial.Polynomial.fit}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{classmethod }}\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{fit}}}{\emph{\DUrole{n}{x}}, \emph{\DUrole{n}{y}}, \emph{\DUrole{n}{deg}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{rcond}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{full}\DUrole{o}{=}\DUrole{default_value}{False}}, \emph{\DUrole{n}{w}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Least squares fit to data.
+
+Return a series instance that is the least squares fit to the data
+\sphinxtitleref{y} sampled at \sphinxtitleref{x}. The domain of the returned instance can be
+specified and this will often result in a superior fit with less
+chance of ill conditioning.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{x}}] \leavevmode{[}array\_like, shape (M,){]}
+x\sphinxhyphen{}coordinates of the M sample points \sphinxcode{\sphinxupquote{(x{[}i{]}, y{[}i{]})}}.
+
+\item[{\sphinxstylestrong{y}}] \leavevmode{[}array\_like, shape (M,) or (M, K){]}
+y\sphinxhyphen{}coordinates of the sample points. Several data sets of sample
+points sharing the same x\sphinxhyphen{}coordinates can be fitted at once by
+passing in a 2D\sphinxhyphen{}array that contains one dataset per column.
+
+\item[{\sphinxstylestrong{deg}}] \leavevmode{[}int or 1\sphinxhyphen{}D array\_like{]}
+Degree(s) of the fitting polynomials. If \sphinxtitleref{deg} is a single integer
+all terms up to and including the \sphinxtitleref{deg}’th term are included in the
+fit. For NumPy versions >= 1.11.0 a list of integers specifying the
+degrees of the terms to include may be used instead.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{None, {[}beg, end{]}, {[}{]}\}, optional{]}
+Domain to use for the returned series. If \sphinxcode{\sphinxupquote{None}},
+then a minimal domain that covers the points \sphinxtitleref{x} is chosen.  If
+\sphinxcode{\sphinxupquote{{[}{]}}} the class domain is used. The default value was the
+class domain in NumPy 1.4 and \sphinxcode{\sphinxupquote{None}} in later versions.
+The \sphinxcode{\sphinxupquote{{[}{]}}} option was added in numpy 1.5.0.
+
+\item[{\sphinxstylestrong{rcond}}] \leavevmode{[}float, optional{]}
+Relative condition number of the fit. Singular values smaller
+than this relative to the largest singular value will be
+ignored. The default value is len(x)*eps, where eps is the
+relative precision of the float type, about 2e\sphinxhyphen{}16 in most
+cases.
+
+\item[{\sphinxstylestrong{full}}] \leavevmode{[}bool, optional{]}
+Switch determining nature of return value. When it is False
+(the default) just the coefficients are returned, when True
+diagnostic information from the singular value decomposition is
+also returned.
+
+\item[{\sphinxstylestrong{w}}] \leavevmode{[}array\_like, shape (M,), optional{]}
+Weights. If not None the contribution of each point
+\sphinxcode{\sphinxupquote{(x{[}i{]},y{[}i{]})}} to the fit is weighted by \sphinxtitleref{w{[}i{]}}. Ideally the
+weights are chosen so that the errors of the products
+\sphinxcode{\sphinxupquote{w{[}i{]}*y{[}i{]}}} all have the same variance.  The default value is
+None.
+
+\DUrole{versionmodified,added}{New in version 1.5.0.}
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}\{{[}beg, end{]}\}, optional{]}
+Window to use for the returned series. The default
+value is the default class domain
+
+\DUrole{versionmodified,added}{New in version 1.6.0.}
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+A series that represents the least squares fit to the data and
+has the domain specified in the call.
+
+\item[{\sphinxstylestrong{{[}resid, rank, sv, rcond{]}}}] \leavevmode{[}list{]}
+These values are only returned if \sphinxtitleref{full} = True
+
+resid – sum of squared residuals of the least squares fit
+rank – the numerical rank of the scaled Vandermonde matrix
+sv – singular values of the scaled Vandermonde matrix
+rcond – value of \sphinxtitleref{rcond}.
+
+For more details, see \sphinxtitleref{linalg.lstsq}.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.fromroots}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fromroots:numpy-polynomial-polynomial-fromroots}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fromroots::doc}}
+method
+\index{fromroots() (numpy.polynomial.Polynomial class method)@\spxentry{fromroots()}\spxextra{numpy.polynomial.Polynomial class method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.fromroots:numpy.polynomial.Polynomial.fromroots}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{classmethod }}\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{fromroots}}}{\emph{\DUrole{n}{roots}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{{[}{]}}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Return series instance that has the specified roots.
+
+Returns a series representing the product
+\sphinxcode{\sphinxupquote{(x \sphinxhyphen{} r{[}0{]})*(x \sphinxhyphen{} r{[}1{]})*...*(x \sphinxhyphen{} r{[}n\sphinxhyphen{}1{]})}}, where \sphinxcode{\sphinxupquote{r}} is a
+list of roots.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{roots}}] \leavevmode{[}array\_like{]}
+List of roots.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{{[}{]}, None, array\_like\}, optional{]}
+Domain for the resulting series. If None the domain is the
+interval from the smallest root to the largest. If {[}{]} the
+domain is the class domain. The default is {[}{]}.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+Window for the returned series. If None the class window is
+used. The default is None.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+Series with the specified roots.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.has\_samecoef}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samecoef:numpy-polynomial-polynomial-has-samecoef}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samecoef::doc}}
+method
+\index{has\_samecoef() (numpy.polynomial.Polynomial method)@\spxentry{has\_samecoef()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samecoef:numpy.polynomial.Polynomial.has_samecoef}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{has\_samecoef}}}{\emph{\DUrole{n}{other}}}{}
+Check if coefficients match.
+
+\DUrole{versionmodified,added}{New in version 1.6.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{other}}] \leavevmode{[}class instance{]}
+The other class must have the \sphinxcode{\sphinxupquote{coef}} attribute.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{bool}}] \leavevmode{[}boolean{]}
+True if the coefficients are the same, False otherwise.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.has\_samedomain}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samedomain:numpy-polynomial-polynomial-has-samedomain}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samedomain::doc}}
+method
+\index{has\_samedomain() (numpy.polynomial.Polynomial method)@\spxentry{has\_samedomain()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samedomain:numpy.polynomial.Polynomial.has_samedomain}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{has\_samedomain}}}{\emph{\DUrole{n}{other}}}{}
+Check if domains match.
+
+\DUrole{versionmodified,added}{New in version 1.6.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{other}}] \leavevmode{[}class instance{]}
+The other class must have the \sphinxcode{\sphinxupquote{domain}} attribute.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{bool}}] \leavevmode{[}boolean{]}
+True if the domains are the same, False otherwise.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.has\_sametype}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_sametype:numpy-polynomial-polynomial-has-sametype}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_sametype::doc}}
+method
+\index{has\_sametype() (numpy.polynomial.Polynomial method)@\spxentry{has\_sametype()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_sametype:numpy.polynomial.Polynomial.has_sametype}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{has\_sametype}}}{\emph{\DUrole{n}{other}}}{}
+Check if types match.
+
+\DUrole{versionmodified,added}{New in version 1.7.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{other}}] \leavevmode{[}object{]}
+Class instance.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{bool}}] \leavevmode{[}boolean{]}
+True if other is same class as self
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.has\_samewindow}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samewindow:numpy-polynomial-polynomial-has-samewindow}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samewindow::doc}}
+method
+\index{has\_samewindow() (numpy.polynomial.Polynomial method)@\spxentry{has\_samewindow()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.has_samewindow:numpy.polynomial.Polynomial.has_samewindow}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{has\_samewindow}}}{\emph{\DUrole{n}{other}}}{}
+Check if windows match.
+
+\DUrole{versionmodified,added}{New in version 1.6.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{other}}] \leavevmode{[}class instance{]}
+The other class must have the \sphinxcode{\sphinxupquote{window}} attribute.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{bool}}] \leavevmode{[}boolean{]}
+True if the windows are the same, False otherwise.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.identity}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.identity:numpy-polynomial-polynomial-identity}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.identity::doc}}
+method
+\index{identity() (numpy.polynomial.Polynomial class method)@\spxentry{identity()}\spxextra{numpy.polynomial.Polynomial class method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.identity:numpy.polynomial.Polynomial.identity}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{classmethod }}\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{identity}}}{\emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}, \emph{\DUrole{n}{window}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Identity function.
+
+If \sphinxcode{\sphinxupquote{p}} is the returned series, then \sphinxcode{\sphinxupquote{p(x) == x}} for all
+values of x.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the array must be of the form \sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where
+\sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of the domain. If None is
+given then the class domain is used. The default is None.
+
+\item[{\sphinxstylestrong{window}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If given, the resulting array must be if the form
+\sphinxcode{\sphinxupquote{{[}beg, end{]}}}, where \sphinxcode{\sphinxupquote{beg}} and \sphinxcode{\sphinxupquote{end}} are the endpoints of
+the window. If None is given then the class window is used. The
+default is None.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+Series of representing the identity.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.integ}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.integ:numpy-polynomial-polynomial-integ}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.integ::doc}}
+method
+\index{integ() (numpy.polynomial.Polynomial method)@\spxentry{integ()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.integ:numpy.polynomial.Polynomial.integ}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{integ}}}{\emph{\DUrole{n}{m}\DUrole{o}{=}\DUrole{default_value}{1}}, \emph{\DUrole{n}{k}\DUrole{o}{=}\DUrole{default_value}{{[}{]}}}, \emph{\DUrole{n}{lbnd}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Integrate.
+
+Return a series instance that is the definite integral of the
+current series.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{m}}] \leavevmode{[}non\sphinxhyphen{}negative int{]}
+The number of integrations to perform.
+
+\item[{\sphinxstylestrong{k}}] \leavevmode{[}array\_like{]}
+Integration constants. The first constant is applied to the
+first integration, the second to the second, and so on. The
+list of values must less than or equal to \sphinxtitleref{m} in length and any
+missing values are set to zero.
+
+\item[{\sphinxstylestrong{lbnd}}] \leavevmode{[}Scalar{]}
+The lower bound of the definite integral.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+A new series representing the integral. The domain is the same
+as the domain of the integrated series.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.linspace}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.linspace:numpy-polynomial-polynomial-linspace}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.linspace::doc}}
+method
+\index{linspace() (numpy.polynomial.Polynomial method)@\spxentry{linspace()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.linspace:numpy.polynomial.Polynomial.linspace}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{linspace}}}{\emph{\DUrole{n}{n}\DUrole{o}{=}\DUrole{default_value}{100}}, \emph{\DUrole{n}{domain}\DUrole{o}{=}\DUrole{default_value}{None}}}{}
+Return x, y values at equally spaced points in domain.
+
+Returns the x, y values at \sphinxtitleref{n} linearly spaced points across the
+domain.  Here y is the value of the polynomial at the points x. By
+default the domain is the same as that of the series instance.
+This method is intended mostly as a plotting aid.
+
+\DUrole{versionmodified,added}{New in version 1.5.0.}
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{n}}] \leavevmode{[}int, optional{]}
+Number of point pairs to return. The default value is 100.
+
+\item[{\sphinxstylestrong{domain}}] \leavevmode{[}\{None, array\_like\}, optional{]}
+If not None, the specified domain is used instead of that of
+the calling instance. It should be of the form \sphinxcode{\sphinxupquote{{[}beg,end{]}}}.
+The default is None which case the class domain is used.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{x, y}}] \leavevmode{[}ndarray{]}
+x is equal to linspace(self.domain{[}0{]}, self.domain{[}1{]}, n) and
+y is the series evaluated at element of x.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.mapparms}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.mapparms:numpy-polynomial-polynomial-mapparms}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.mapparms::doc}}
+method
+\index{mapparms() (numpy.polynomial.Polynomial method)@\spxentry{mapparms()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.mapparms:numpy.polynomial.Polynomial.mapparms}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{mapparms}}}{}{}
+Return the mapping parameters.
+
+The returned values define a linear map \sphinxcode{\sphinxupquote{off + scl*x}} that is
+applied to the input arguments before the series is evaluated. The
+map depends on the \sphinxcode{\sphinxupquote{domain}} and \sphinxcode{\sphinxupquote{window}}; if the current
+\sphinxcode{\sphinxupquote{domain}} is equal to the \sphinxcode{\sphinxupquote{window}} the resulting map is the
+identity.  If the coefficients of the series instance are to be
+used by themselves outside this class, then the linear function
+must be substituted for the \sphinxcode{\sphinxupquote{x}} in the standard representation of
+the base polynomials.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{off, scl}}] \leavevmode{[}float or complex{]}
+The mapping function is defined by \sphinxcode{\sphinxupquote{off + scl*x}}.
+
+\end{description}
+
+\end{description}\end{quote}
+\subsubsection*{Notes}
+
+If the current domain is the interval \sphinxcode{\sphinxupquote{{[}l1, r1{]}}} and the window
+is \sphinxcode{\sphinxupquote{{[}l2, r2{]}}}, then the linear mapping function \sphinxcode{\sphinxupquote{L}} is
+defined by the equations:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{L}\PYG{p}{(}\PYG{n}{l1}\PYG{p}{)} \PYG{o}{=} \PYG{n}{l2}
+\PYG{n}{L}\PYG{p}{(}\PYG{n}{r1}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r2}
+\end{sphinxVerbatim}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.roots}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.roots:numpy-polynomial-polynomial-roots}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.roots::doc}}
+method
+\index{roots() (numpy.polynomial.Polynomial method)@\spxentry{roots()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.roots:numpy.polynomial.Polynomial.roots}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{roots}}}{}{}
+Return the roots of the series polynomial.
+
+Compute the roots for the series. Note that the accuracy of the
+roots decrease the further outside the domain they lie.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{roots}}] \leavevmode{[}ndarray{]}
+Array containing the roots of the series.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.trim}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.trim:numpy-polynomial-polynomial-trim}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.trim::doc}}
+method
+\index{trim() (numpy.polynomial.Polynomial method)@\spxentry{trim()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.trim:numpy.polynomial.Polynomial.trim}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{trim}}}{\emph{\DUrole{n}{tol}\DUrole{o}{=}\DUrole{default_value}{0}}}{}
+Remove trailing coefficients
+
+Remove trailing coefficients until a coefficient is reached whose
+absolute value greater than \sphinxtitleref{tol} or the beginning of the series is
+reached. If all the coefficients would be removed the series is set
+to \sphinxcode{\sphinxupquote{{[}0{]}}}. A new series instance is returned with the new
+coefficients.  The current instance remains unchanged.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{tol}}] \leavevmode{[}non\sphinxhyphen{}negative number.{]}
+All trailing coefficients less than \sphinxtitleref{tol} will be removed.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+Contains the new set of coefficients.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.truncate}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.truncate:numpy-polynomial-polynomial-truncate}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.truncate::doc}}
+method
+\index{truncate() (numpy.polynomial.Polynomial method)@\spxentry{truncate()}\spxextra{numpy.polynomial.Polynomial method}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.truncate:numpy.polynomial.Polynomial.truncate}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{truncate}}}{\emph{\DUrole{n}{size}}}{}
+Truncate series to length \sphinxtitleref{size}.
+
+Reduce the series to length \sphinxtitleref{size} by discarding the high
+degree terms. The value of \sphinxtitleref{size} must be a positive integer. This
+can be useful in least squares where the coefficients of the
+high degree terms may be very small.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{size}}] \leavevmode{[}positive int{]}
+The series is reduced to length \sphinxtitleref{size} by discarding the high
+degree terms. The value of \sphinxtitleref{size} must be a positive integer.
+
+\end{description}
+
+\item[{Returns}] \leavevmode\begin{description}
+\item[{\sphinxstylestrong{new\_series}}] \leavevmode{[}series{]}
+New instance of series with truncated coefficients.
+
+\end{description}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\subsubsection*{Properties}
+
+
+\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{\X{1}{2}\X{1}{2}}
+\hline
+
+\endfirsthead
+
+\multicolumn{2}{c}%
+{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} continued from previous page}}}\\
+\hline
+
+\endhead
+
+\hline
+\multicolumn{2}{r}{\makebox[0pt][r]{\sphinxtablecontinued{continues on next page}}}\\
+\endfoot
+
+\endlastfoot
+
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.domain:numpy.polynomial.Polynomial.domain}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{domain}}}}}
+&
+
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.maxpower:numpy.polynomial.Polynomial.maxpower}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{maxpower}}}}}
+&
+
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.nickname:numpy.polynomial.Polynomial.nickname}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{nickname}}}}}
+&
+
+\\
+\hline
+{\hyperref[\detokenize{generated/generated/numpy.polynomial.Polynomial.window:numpy.polynomial.Polynomial.window}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{window}}}}}
+&
+
+\\
+\hline
+\end{longtable}\sphinxatlongtableend\end{savenotes}
+
+
+\subsection{numpy.polynomial.Polynomial.domain}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.domain:numpy-polynomial-polynomial-domain}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.domain::doc}}
+attribute
+\index{domain (numpy.polynomial.Polynomial attribute)@\spxentry{domain}\spxextra{numpy.polynomial.Polynomial attribute}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.domain:numpy.polynomial.Polynomial.domain}}\pysigline{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{domain}}\sphinxbfcode{\sphinxupquote{ = array({[}\sphinxhyphen{}1,  1{]})}}}~
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.maxpower}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.maxpower:numpy-polynomial-polynomial-maxpower}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.maxpower::doc}}
+attribute
+\index{maxpower (numpy.polynomial.Polynomial attribute)@\spxentry{maxpower}\spxextra{numpy.polynomial.Polynomial attribute}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.maxpower:numpy.polynomial.Polynomial.maxpower}}\pysigline{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{maxpower}}\sphinxbfcode{\sphinxupquote{ = 100}}}~
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.nickname}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.nickname:numpy-polynomial-polynomial-nickname}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.nickname::doc}}
+attribute
+\index{nickname (numpy.polynomial.Polynomial attribute)@\spxentry{nickname}\spxextra{numpy.polynomial.Polynomial attribute}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.nickname:numpy.polynomial.Polynomial.nickname}}\pysigline{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{nickname}}\sphinxbfcode{\sphinxupquote{ = 'poly'}}}~
+\end{fulllineitems}
+
+
+
+\subsection{numpy.polynomial.Polynomial.window}
+\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.window:numpy-polynomial-polynomial-window}}\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.window::doc}}
+attribute
+\index{window (numpy.polynomial.Polynomial attribute)@\spxentry{window}\spxextra{numpy.polynomial.Polynomial attribute}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{generated/generated/numpy.polynomial.Polynomial.window:numpy.polynomial.Polynomial.window}}\pysigline{\sphinxcode{\sphinxupquote{Polynomial.}}\sphinxbfcode{\sphinxupquote{window}}\sphinxbfcode{\sphinxupquote{ = array({[}\sphinxhyphen{}1,  1{]})}}}~
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\chapter{Microsoft 365 docs navigation guide}
+\label{\detokenize{markdown:microsoft-365-docs-navigation-guide}}\label{\detokenize{markdown::doc}}
+This topic provides some tips and tricks for navigating the Microsoft 365 technical documentation space.
+
+
+\section{Impact to customers who don’t transition}
+\label{\detokenize{markdown:impact-to-customers-who-don-t-transition}}
+The following table summarizes the impact to customers who don’t transition from a Microsoft 365 Business Preview subscription to a Microsoft 365 Business subscription.
+
+
+
+
+\section{Hub page}
+\label{\detokenize{markdown:hub-page}}
+The Microsoft 365 hub page can be found at \sphinxurl{https://aka.ms/microsoft365docs} and is the entry point for finding relevant Microsoft 365 content.
+
+You can always navigate back to this page by selecting \sphinxstylestrong{Microsoft 365} from the header at the top of every page within the Microsoft 365 technical documentation set:
+
+
+\chapter{JupyterLab Demo Start}
+\label{\detokenize{markdown:jupyterlab-demo-start}}
+JupyterLab: The next generation user interface for Project Jupyter
+
+https://github.com/jupyter/jupyterlab
+
+It started as a collaboration between:
+\begin{itemize}
+\item {} 
+Project Jupyter
+
+\item {} 
+Bloomberg
+
+\item {} 
+(then) Continuum
+
+\end{itemize}
+
+
+
+
+\section{Tables}
+\label{\detokenize{markdown:tables}}
+
+
+and now involves many other{\hyperref[\detokenize{markdown:footnote_1}]{\emph{1}}}  people from many other places (not purely academic or business)
+
+1: 주석
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{fancyAlert}\PYG{p}{(}\PYG{n+nx}{arg}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n+nx}{arg}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{\PYGZdl{}}\PYG{p}{.}\PYG{n+nx}{facebox}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n+nx}{div}\PYG{o}{:}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}foo\PYGZsq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\section{1) Building blocks of interactive computing}
+\label{\detokenize{markdown:building-blocks-of-interactive-computing}}
+
+\subsection{Start with the launcher}
+\label{\detokenize{markdown:start-with-the-launcher}}
+Use it to open different activities:
+\begin{itemize}
+\item {} 
+Notebook
+
+\item {} 
+Console
+
+\item {} 
+Editor
+
+\item {} 
+Terminal
+
+\end{itemize}
+
+
+\subsection{Notebooks}
+\label{\detokenize{markdown:notebooks}}\begin{itemize}
+\item {} 
+Open example notebooks to show that notebooks still work
+
+\item {} 
+Collapse input/output
+
+\item {} 
+Drag and drop cells
+
+\end{itemize}
+
+
+\subsection{Demonstrate left panel plugins:}
+\label{\detokenize{markdown:demonstrate-left-panel-plugins}}\begin{itemize}
+\item {} 
+File Browser (file operations, context menu, including drag and drop)
+
+\item {} 
+Running
+
+\item {} 
+Command Palette (fuzzy searching for ‘new’)
+
+\end{itemize}
+
+
+\subsection{Markdown example}
+\label{\detokenize{markdown:markdown-example}}\begin{itemize}
+\item {} 
+Open \sphinxcode{\sphinxupquote{markdown\_python.md}} in the File Editor
+
+\item {} 
+View the rendered markdown, arrange side by side
+
+\item {} 
+Attach a Kernel/Console and run the code by selecting blocks and pressing
+\sphinxcode{\sphinxupquote{Shift+Enter}}
+
+\end{itemize}
+
+
+\subsection{Arrange the building blocks in the main area}
+\label{\detokenize{markdown:arrange-the-building-blocks-in-the-main-area}}
+The dock panel allows you to arrange the activites into an
+arbitrary layout.
+
+Tabs and single document mode allow you to focus.
+
+
+\section{4) File handlers}
+\label{\detokenize{markdown:file-handlers}}
+JupyterLab has a powerful and extensible architecture for handling a wide range of file formats:
+\begin{itemize}
+\item {} 
+CSV
+\begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{./data/iris.csv}} (small)
+
+\item {} 
+\sphinxcode{\sphinxupquote{TCGA\_Data}} (small to medium)
+
+\item {} 
+Urban\_Data\_Challenge: \sphinxcode{\sphinxupquote{data/big.csv}}
+
+\end{itemize}
+
+\item {} 
+Images
+\begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{data/hubble.png}}
+
+\end{itemize}
+
+\item {} 
+Vega\sphinxhyphen{}Lite
+\begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{data/vega.vl.json}}
+
+\end{itemize}
+
+\item {} 
+Open DC museum GeoJSON file from \sphinxhref{http://opendata.dc.gov/datasets/2e65fc16edc3481989d2cc17e6f8c533\_54}{OpenData DC}%
+\begin{footnote}[10]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://opendata.dc.gov/datasets/2e65fc16edc3481989d2cc17e6f8c533\_54}
+%
+\end{footnote}: \sphinxcode{\sphinxupquote{data/Museums\_in\_DC.geojson}}
+
+\item {} 
+Notebook demonstrating bqplot widgets: \sphinxcode{\sphinxupquote{notebooks/bqplot.ipynb}}
+
+\end{itemize}
+
+
+\section{5) Find and Replace}
+\label{\detokenize{markdown:find-and-replace}}
+first class support for find and replace across JupyterLab, currently supported in
+notebooks and text files and is extensible for other widgets who wish to support it.
+
+
+\section{6) Status Bar}
+\label{\detokenize{markdown:status-bar}}
+We have integrated the JupyterLab Status Bar package package into the core distribution. Extensions can add their own status to it as well
+
+
+\section{7) Printing}
+\label{\detokenize{markdown:printing}}
+A printing system allows extensions to customize how documents and activities are printed.
+
+
+\section{8) JupyterHub}
+\label{\detokenize{markdown:jupyterhub}}
+We now include the JupyterHub extension as a core JupyterLab extension, so you no longer need to install @jupyterlab/hub\sphinxhyphen{}extension (supporting multi\sphinxhyphen{}user + authentication workflows)
+
+
+\section{9) Plugin architecture}
+\label{\detokenize{markdown:plugin-architecture}}
+The genius of open\sphinxhyphen{}source is being able to shape your tools to your heart’s content.
+
+Just like Jupyter is built on top of building blocks of the protocol and message spec, \sphinxstyleemphasis{you} can build on this platform for your workflow.
+\begin{itemize}
+\item {} 
+Everything in JupyterLab is an extension, including everything we have demoed
+
+\item {} 
+Extensions are just \sphinxcode{\sphinxupquote{npm}} packages with metadata
+
+\item {} 
+Anyone can create, package, ship plugins
+
+\item {} 
+Extension can, for example:
+\begin{itemize}
+\item {} 
+Add things to command palette, menu
+
+\item {} 
+Add viewers for documents
+
+\item {} 
+Expose other controls (e.g., manage a spark cluster?)
+
+\item {} 
+Provide more capabilities to the system
+
+\end{itemize}
+
+\end{itemize}
+
+
+\section{What will you build?}
+\label{\detokenize{markdown:what-will-you-build}}
+
 \chapter{Markdown}
-\label{\detokenize{markdown:markdown}}\label{\detokenize{markdown::doc}}
+\label{\detokenize{markdown:markdown}}
 Sphinx can be configured to use markdown using the \sphinxhref{https://github.com/readthedocs/recommonmark}{recommonmark}%
-\begin{footnote}[7]\sphinxAtStartFootnote
+\begin{footnote}[11]\sphinxAtStartFootnote
 \sphinxnolinkurl{https://github.com/readthedocs/recommonmark}
 %
 \end{footnote}
@@ -1514,20 +3082,1122 @@ sit amet laoreet nibh.
 
 
 
-\#    numpydoc
-\#    markdown.md
-\#    rst\sphinxhyphen{}cheatsheet/rst\sphinxhyphen{}cheatsheet
 
-\#.. toctree::
-\#    :caption: Changes and License
-\#    :maxdepth: 2
+\chapter{rst Cheatsheet}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:rst-cheatsheet}}\label{\detokenize{rst-cheatsheet/rst-cheatsheet::doc}}
+The \sphinxhref{https://github.com/ralsina/rst-cheatsheet}{rst Cheatsheet}%
+\begin{footnote}[12]\sphinxAtStartFootnote
+\sphinxnolinkurl{https://github.com/ralsina/rst-cheatsheet}
+%
+\end{footnote} covers a wide range of
+rst markup. It and its contents are
+\sphinxhref{http://creativecommons.org/licenses/by/3.0/de/deed.en\_GB}{CC licensed}%
+\begin{footnote}[13]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://creativecommons.org/licenses/by/3.0/de/deed.en\_GB}
+%
+\end{footnote}.
 
-\#    change\sphinxhyphen{}log
-\#    license
 
-\#Index
-\#\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}
-\#:ref:\sphinxtitleref{genindex}
+\section{Inline Markup}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:inline-markup}}
+Inline markup allows words and phrases within text to have character styles (like italics and boldface) and functionality (like hyperlinks).
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{*}\PYG{n}{emphasis}\PYG{o}{*}
+\end{sphinxVerbatimintable}
+&
+\sphinxstyleemphasis{emphasis}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{*}\PYG{o}{*}\PYG{n}{strong} \PYG{n}{emphasis}\PYG{o}{*}\PYG{o}{*}
+\end{sphinxVerbatimintable}
+&
+\sphinxstylestrong{strong emphasis}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+`interpreted text`
+\end{sphinxVerbatimintable}
+&
+The rendering and meaning of interpreted text
+is domain\sphinxhyphen{} or application\sphinxhyphen{}dependent.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+``inline literal``
+\end{sphinxVerbatimintable}
+&
+\sphinxcode{\sphinxupquote{inline literal}}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{reference\PYGZus{}}
+\end{sphinxVerbatimintable}
+&
+\sphinxhref{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}{reference}%
+\begin{footnote}[14]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}
+%
+\end{footnote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+`phrase reference`\PYGZus{}
+\end{sphinxVerbatimintable}
+&
+\sphinxhref{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}{phrase reference}%
+\begin{footnote}[15]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}
+%
+\end{footnote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{anonymous\PYGZus{}\PYGZus{}}
+\end{sphinxVerbatimintable}
+&
+\sphinxhref{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}{anonymous}%
+\begin{footnote}[16]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://docutils.sourceforge.net/docs/user/rst/quickref.html\#hyperlink-targets}
+%
+\end{footnote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYGZus{}`inline internal target`
+\end{sphinxVerbatimintable}
+&
+\phantomsection\label{\detokenize{rst-cheatsheet/rst-cheatsheet:inline-internal-target}}inline internal target
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{|}\PYG{n}{substitution} \PYG{n}{reference}\PYG{o}{|}
+\end{sphinxVerbatimintable}
+&
+The result is substituted in from the
+substitution definition.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{footnote} \PYG{n}{reference} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{n}{\PYGZus{}}
+\end{sphinxVerbatimintable}
+&
+footnote reference %
+\begin{footnote}[17]\sphinxAtStartFootnote
+This is the first one.
+%
+\end{footnote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{citation} \PYG{n}{reference} \PYG{p}{[}\PYG{n}{CIT2002}\PYG{p}{]}\PYG{n}{\PYGZus{}}
+\end{sphinxVerbatimintable}
+&
+citation reference \sphinxcite{rst-cheatsheet/rst-cheatsheet:cit2002}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{http}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{docutils}\PYG{o}{.}\PYG{n}{sf}\PYG{o}{.}\PYG{n}{net}\PYG{o}{/}
+\end{sphinxVerbatimintable}
+&
+\sphinxurl{http://docutils.sf.net/}
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Escaping with Backslashes}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:escaping-with-backslashes}}
+reStructuredText uses backslashes (“") to override the special meaning given to markup characters and get
+the literal characters themselves. To get a literal backslash, use an escaped backslash (“\textbackslash{}”). For example:
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+*escape* ``with`` \PYGZdq{}\PYGZbs{}\PYGZdq{}
+\end{sphinxVerbatimintable}
+&
+\sphinxstyleemphasis{escape} \sphinxcode{\sphinxupquote{with}} “”
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYGZbs{}*escape* \PYGZbs{}``with`` \PYGZdq{}\PYGZbs{}\PYGZbs{}\PYGZdq{}
+\end{sphinxVerbatimintable}
+&
+*escape* ``with`` “"
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Lists}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:lists}}
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{\PYGZhy{}} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{item} \PYG{l+m+mf}{1.} \PYG{n}{A} \PYG{n}{blank} \PYG{n}{line} \PYG{n}{before} \PYG{n}{the} \PYG{n}{first}
+  \PYG{o+ow}{and} \PYG{n}{last} \PYG{n}{items} \PYG{o+ow}{is} \PYG{n}{required}\PYG{o}{.}
+\PYG{o}{\PYGZhy{}} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{item} \PYG{l+m+mi}{2}
+
+\PYG{o}{\PYGZhy{}} \PYG{n}{Item} \PYG{l+m+mi}{3}\PYG{p}{:} \PYG{n}{blank} \PYG{n}{lines} \PYG{n}{between} \PYG{n}{items} \PYG{n}{are} \PYG{n}{optional}\PYG{o}{.}
+\PYG{o}{\PYGZhy{}} \PYG{n}{Item} \PYG{l+m+mi}{4}\PYG{p}{:} \PYG{n}{Bullets} \PYG{n}{are} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{*}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o+ow}{or} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}
+  \PYG{n}{Continuing} \PYG{n}{text} \PYG{n}{must} \PYG{n}{be} \PYG{n}{aligned} \PYG{n}{after} \PYG{n}{the} \PYG{n}{bullet}
+  \PYG{o+ow}{and} \PYG{n}{whitespace}\PYG{o}{.}
+\PYG{o}{\PYGZhy{}} \PYG{n}{This} \PYG{n+nb}{list} \PYG{n}{item} \PYG{n}{contains} \PYG{n}{nested} \PYG{n}{items}
+
+  \PYG{o}{\PYGZhy{}} \PYG{n}{Nested} \PYG{n}{items} \PYG{n}{must} \PYG{n}{be} \PYG{n}{indented} \PYG{n}{to} \PYG{n}{the} \PYG{n}{same}
+    \PYG{n}{level}
+\end{sphinxVerbatimintable}
+&\begin{itemize}
+\item {} 
+This is item 1. A blank line before the first
+and last items is required.
+
+\item {} 
+This is item 2
+
+\item {} 
+Item 3: blank lines between items are optional.
+
+\item {} 
+Item 4: Bullets are “\sphinxhyphen{}“, “*” or “+”.
+Continuing text must be aligned after the bullet
+and whitespace.
+
+\item {} 
+This list item contains nested items
+\begin{itemize}
+\item {} 
+Nested items must be indented to the same
+level
+
+\end{itemize}
+
+\end{itemize}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{l+m+mf}{3.} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{the} \PYG{n}{first} \PYG{n}{item}
+\PYG{l+m+mf}{4.} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{the} \PYG{n}{second} \PYG{n}{item}
+\PYG{l+m+mf}{5.} \PYG{n}{Enumerators} \PYG{n}{are} \PYG{n}{arabic} \PYG{n}{numbers}\PYG{p}{,}
+   \PYG{n}{single} \PYG{n}{letters}\PYG{p}{,} \PYG{o+ow}{or} \PYG{n}{roman} \PYG{n}{numerals}
+\PYG{l+m+mf}{6.} \PYG{n}{List} \PYG{n}{items} \PYG{n}{should} \PYG{n}{be} \PYG{n}{sequentially}
+   \PYG{n}{numbered}\PYG{p}{,} \PYG{n}{but} \PYG{n}{need} \PYG{o+ow}{not} \PYG{n}{start} \PYG{n}{at} \PYG{l+m+mi}{1}
+   \PYG{p}{(}\PYG{n}{although} \PYG{o+ow}{not} \PYG{n+nb}{all} \PYG{n}{formatters} \PYG{n}{will}
+   \PYG{n}{honour} \PYG{n}{the} \PYG{n}{first} \PYG{n}{index}\PYG{p}{)}\PYG{o}{.}
+\PYG{c+c1}{\PYGZsh{}. This item is auto\PYGZhy{}enumerated}
+\end{sphinxVerbatimintable}
+&\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\setcounter{enumi}{2}
+\item {} 
+This is the first item
+
+\item {} 
+This is the second item
+
+\item {} 
+Enumerators are arabic numbers,
+single letters, or roman numerals
+
+\item {} 
+List items should be sequentially
+numbered, but need not start at 1
+(although not all formatters will
+honour the first index).
+
+\item {} 
+This item is auto\sphinxhyphen{}enumerated
+
+\end{enumerate}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{what}
+  \PYG{n}{Definition} \PYG{n}{lists} \PYG{n}{associate} \PYG{n}{a} \PYG{n}{term} \PYG{k}{with}
+  \PYG{n}{a} \PYG{n}{definition}\PYG{o}{.}
+
+\PYG{n}{how}
+  \PYG{n}{The} \PYG{n}{term} \PYG{o+ow}{is} \PYG{n}{a} \PYG{n}{one}\PYG{o}{\PYGZhy{}}\PYG{n}{line} \PYG{n}{phrase}\PYG{p}{,} \PYG{o+ow}{and} \PYG{n}{the}
+  \PYG{n}{definition} \PYG{o+ow}{is} \PYG{n}{one} \PYG{o+ow}{or} \PYG{n}{more} \PYG{n}{paragraphs} \PYG{o+ow}{or}
+  \PYG{n}{body} \PYG{n}{elements}\PYG{p}{,} \PYG{n}{indented} \PYG{n}{relative} \PYG{n}{to} \PYG{n}{the}
+  \PYG{n}{term}\PYG{o}{.} \PYG{n}{Blank} \PYG{n}{lines} \PYG{n}{are} \PYG{o+ow}{not} \PYG{n}{allowed}
+  \PYG{n}{between} \PYG{n}{term} \PYG{o+ow}{and} \PYG{n}{definition}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&\begin{description}
+\item[{what}] \leavevmode
+Definition lists associate a term with
+a definition.
+
+\item[{how}] \leavevmode
+The term is a one\sphinxhyphen{}line phrase, and the
+definition is one or more paragraphs or
+body elements, indented relative to the
+term. Blank lines are not allowed
+between term and definition.
+
+\end{description}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{p}{:}\PYG{n}{Authors}\PYG{p}{:}
+    \PYG{n}{Tony} \PYG{n}{J}\PYG{o}{.} \PYG{p}{(}\PYG{n}{Tibs}\PYG{p}{)} \PYG{n}{Ibbs}\PYG{p}{,}
+    \PYG{n}{David} \PYG{n}{Goodger}
+
+\PYG{p}{:}\PYG{n}{Version}\PYG{p}{:} \PYG{l+m+mf}{1.0} \PYG{n}{of} \PYG{l+m+mi}{2001}\PYG{o}{/}\PYG{l+m+mi}{08}\PYG{o}{/}\PYG{l+m+mi}{08}
+\PYG{p}{:}\PYG{n}{Dedication}\PYG{p}{:} \PYG{n}{To} \PYG{n}{my} \PYG{n}{father}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&\begin{quote}\begin{description}
+\item[{Authors}] \leavevmode
+Tony J. (Tibs) Ibbs,
+David Goodger
+
+\item[{Version}] \leavevmode
+1.0 of 2001/08/08
+
+\item[{Dedication}] \leavevmode
+To my father.
+
+\end{description}\end{quote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{\PYGZhy{}}\PYG{n}{a}            \PYG{n}{command}\PYG{o}{\PYGZhy{}}\PYG{n}{line} \PYG{n}{option} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{a}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{o}{\PYGZhy{}}\PYG{n}{b} \PYG{n}{file}       \PYG{n}{options} \PYG{n}{can} \PYG{n}{have} \PYG{n}{arguments}
+              \PYG{o+ow}{and} \PYG{n}{long} \PYG{n}{descriptions}
+\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{long}        \PYG{n}{options} \PYG{n}{can} \PYG{n}{be} \PYG{n}{long} \PYG{n}{also}
+\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{input}\PYG{o}{=}\PYG{n}{file}  \PYG{n}{long} \PYG{n}{options} \PYG{n}{can} \PYG{n}{also} \PYG{n}{have}
+              \PYG{n}{arguments}
+\PYG{o}{/}\PYG{n}{V}            \PYG{n}{DOS}\PYG{o}{/}\PYG{n}{VMS}\PYG{o}{\PYGZhy{}}\PYG{n}{style} \PYG{n}{options} \PYG{n}{too}
+\end{sphinxVerbatimintable}
+&\begin{optionlist}{3cm}
+\item [\sphinxhyphen{}a]  
+command\sphinxhyphen{}line option “a”
+\item [\sphinxhyphen{}b file]  
+options can have arguments
+and long descriptions
+\item [\sphinxhyphen{}\sphinxhyphen{}long]  
+options can be long also
+\item [\sphinxhyphen{}\sphinxhyphen{}input=file]  
+long options can also have
+arguments
+\item [/V]  
+DOS/VMS\sphinxhyphen{}style options too
+\end{optionlist}
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+
+
+\section{Section Structure}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:section-structure}}
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+Title
+=====
+
+Titles are underlined (or over\PYGZhy{} and underlined) with
+a nonalphanumeric character at least as long as the
+text.
+
+A lone top\PYGZhy{}level section is lifted up to be the
+document\PYGZsq{}s title.
+
+Any non\PYGZhy{}alphanumeric character can be used, but
+Python convention is:
+
+* ``\PYGZsh{}`` with overline, for parts
+* ``*`` with overline, for chapters
+* ``=``, for sections
+* ``\PYGZhy{}``, for subsections
+* ``\PYGZca{}``, for subsubsections
+* ``\PYGZdq{}``, for paragraphs
+\end{sphinxVerbatimintable}
+&
+Title
+
+Titles are underlined (or over\sphinxhyphen{} and underlined) with
+a nonalphanumeric character at least as long as the
+text.
+
+A lone top\sphinxhyphen{}level section is lifted up to be the
+document’s title.
+
+Any non\sphinxhyphen{}alphanumeric character can be used, but
+Python convention is:
+\begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{\#}} with overline, for parts
+
+\item {} 
+\sphinxcode{\sphinxupquote{*}} with overline, for chapters
+
+\item {} 
+\sphinxcode{\sphinxupquote{=}}, for sections
+
+\item {} 
+\sphinxcode{\sphinxupquote{\sphinxhyphen{}}}, for subsections
+
+\item {} 
+\sphinxcode{\sphinxupquote{\textasciicircum{}}}, for subsubsections
+
+\item {} 
+\sphinxcode{\sphinxupquote{"}}, for paragraphs
+
+\end{itemize}
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Blocks}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:blocks}}
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{a} \PYG{n}{paragraph}\PYG{o}{.}
+
+\PYG{n}{Paragraphs} \PYG{n}{line} \PYG{n}{up} \PYG{n}{at} \PYG{n}{their} \PYG{n}{left} \PYG{n}{edges}\PYG{p}{,} \PYG{o+ow}{and} \PYG{n}{are}
+\PYG{n}{normally} \PYG{n}{separated} \PYG{n}{by} \PYG{n}{blank} \PYG{n}{lines}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+This is a paragraph.
+
+Paragraphs line up at their left
+edges, and are normally separated
+by blank lines.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+A paragraph containing only two colons indicates
+the following indented or quoted text is a literal
+block or quoted text is a literal block.
+
+::
+
+  Whitespace, newlines, blank lines, and  all kinds of
+  markup (like *this* or \PYGZbs{}this) is preserved here.
+
+You can also tack the ``::`` at the end of a
+paragraph::
+
+   It\PYGZsq{}s very convenient to use this form.
+
+Per\PYGZhy{}line quoting can also be used for unindented
+blocks::
+
+\PYGZgt{} Useful for quotes from email and
+\PYGZgt{} for Haskell literate programming.
+\end{sphinxVerbatimintable}
+&
+A paragraph containing only two colons
+indicates that the following indented
+or quoted text is a literal block.
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Whitespace}\PYG{p}{,} \PYG{n}{newlines}\PYG{p}{,} \PYG{n}{blank} \PYG{n}{lines}\PYG{p}{,} \PYG{o+ow}{and}
+\PYG{n+nb}{all} \PYG{n}{kinds} \PYG{n}{of} \PYG{n}{markup} \PYG{p}{(}\PYG{n}{like} \PYG{o}{*}\PYG{n}{this}\PYG{o}{*} \PYG{o+ow}{or}
+\PYGZbs{}\PYG{n}{this}\PYG{p}{)} \PYG{o+ow}{is} \PYG{n}{preserved} \PYG{n}{by} \PYG{n}{literal} \PYG{n}{blocks}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+
+You can also tack the \sphinxcode{\sphinxupquote{::}} at the end of a
+paragraph:
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{It}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{s very convenient to use this form.}
+\end{sphinxVerbatimintable}
+
+Per\sphinxhyphen{}line quoting can also be used for
+unindented blocks:
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{\PYGZgt{}} \PYG{n}{Useful} \PYG{k}{for} \PYG{n}{quotes} \PYG{k+kn}{from} \PYG{n+nn}{email} \PYG{o+ow}{and}
+\PYG{o}{\PYGZgt{}} \PYG{k}{for} \PYG{n}{Haskell} \PYG{n}{literate} \PYG{n}{programming}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{|} \PYG{n}{Line} \PYG{n}{blocks} \PYG{n}{are} \PYG{n}{useful} \PYG{k}{for} \PYG{n}{addresses}\PYG{p}{,}
+\PYG{o}{|} \PYG{n}{verse}\PYG{p}{,} \PYG{o+ow}{and} \PYG{n}{adornment}\PYG{o}{\PYGZhy{}}\PYG{n}{free} \PYG{n}{lists}\PYG{o}{.}
+\PYG{o}{|}
+\PYG{o}{|} \PYG{n}{Each} \PYG{n}{new} \PYG{n}{line} \PYG{n}{begins} \PYG{k}{with} \PYG{n}{a}
+\PYG{o}{|} \PYG{n}{vertical} \PYG{n}{bar} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{|}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}
+\PYG{o}{|}     \PYG{n}{Line} \PYG{n}{breaks} \PYG{o+ow}{and} \PYG{n}{initial} \PYG{n}{indents}
+\PYG{o}{|}     \PYG{n}{are} \PYG{n}{preserved}\PYG{o}{.}
+\PYG{o}{|} \PYG{n}{Continuation} \PYG{n}{lines} \PYG{n}{are} \PYG{n}{wrapped}
+  \PYG{n}{portions} \PYG{n}{of} \PYG{n}{long} \PYG{n}{lines}\PYG{p}{;} \PYG{n}{they} \PYG{n}{begin}
+  \PYG{k}{with} \PYG{n}{spaces} \PYG{o+ow}{in} \PYG{n}{place} \PYG{n}{of} \PYG{n}{vertical} \PYG{n}{bars}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+\begin{DUlineblock}{0em}
+\item[] Line blocks are useful for addresses,
+\item[] verse, and adornment\sphinxhyphen{}free lists.
+\item[] 
+\item[] Each new line begins with a
+\item[] vertical bar (“|”).
+\item[]
+\begin{DUlineblock}{\DUlineblockindent}
+\item[] Line breaks and initial indents
+\item[] are preserved.
+\end{DUlineblock}
+\item[] Continuation lines are wrapped
+portions of long lines; they begin
+with spaces in place of vertical bars.
+\end{DUlineblock}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Block} \PYG{n}{quotes} \PYG{n}{are} \PYG{n}{just}\PYG{p}{:}
+
+    \PYG{n}{Indented} \PYG{n}{paragraphs}\PYG{p}{,}
+
+        \PYG{o+ow}{and} \PYG{n}{they} \PYG{n}{may} \PYG{n}{nest}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+Block quotes are just:
+\begin{quote}
+
+Indented paragraphs,
+\begin{quote}
+
+and they may nest.
+\end{quote}
+\end{quote}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Doctest} \PYG{n}{blocks} \PYG{n}{are} \PYG{n}{interactive}
+\PYG{n}{Python} \PYG{n}{sessions}\PYG{o}{.} \PYG{n}{They} \PYG{n}{begin} \PYG{k}{with}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{``\PYGZgt{}\PYGZgt{}\PYGZgt{}``}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o+ow}{and} \PYG{n}{end} \PYG{k}{with} \PYG{n}{a} \PYG{n}{blank} \PYG{n}{line}\PYG{o}{.}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{o}{\PYGZgt{}} \PYG{n+nb}{print} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{This is a doctest block.}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{a} \PYG{n}{doctest} \PYG{n}{block}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+Doctest blocks are interactive
+Python sessions. They begin with
+“\sphinxcode{\sphinxupquote{>>>}}” and end with a blank line.
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{This is a doctest block.}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{g+go}{This is a doctest block.}
+\end{sphinxVerbatimintable}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{A} \PYG{n}{transition} \PYG{n}{marker} \PYG{o+ow}{is} \PYG{n}{a} \PYG{n}{horizontal} \PYG{n}{line}
+\PYG{n}{of} \PYG{l+m+mi}{4} \PYG{o+ow}{or} \PYG{n}{more} \PYG{n}{repeated} \PYG{n}{punctuation}
+\PYG{n}{characters}\PYG{o}{.}
+
+\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}
+
+\PYG{n}{A} \PYG{n}{transition} \PYG{n}{should} \PYG{o+ow}{not} \PYG{n}{begin} \PYG{o+ow}{or} \PYG{n}{end} \PYG{n}{a}
+\PYG{n}{section} \PYG{o+ow}{or} \PYG{n}{document}\PYG{p}{,} \PYG{n}{nor} \PYG{n}{should} \PYG{n}{two}
+\PYG{n}{transitions} \PYG{n}{be} \PYG{n}{immediately} \PYG{n}{adjacent}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+A transition marker is a horizontal line
+of 4 or more repeated punctuation
+characters.
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|}
+\hline
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+A transition should not begin or end a
+section or document, nor should two
+transitions be immediately adjacent.
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+
+
+\section{Tables}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:tables}}
+There are two syntaxes for tables in reStructuredText. Grid tables are complete but cumbersome to create. Simple
+tables are easy to create but limited (no row spans, etc.).
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}
+\PYG{o}{|} \PYG{n}{Header} \PYG{l+m+mi}{1}   \PYG{o}{|} \PYG{n}{Header} \PYG{l+m+mi}{2}   \PYG{o}{|} \PYG{n}{Header} \PYG{l+m+mi}{3}  \PYG{o}{|}
+\PYG{o}{+}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{+}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{+}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}\PYG{o}{+}
+\PYG{o}{|} \PYG{n}{body} \PYG{n}{row} \PYG{l+m+mi}{1} \PYG{o}{|} \PYG{n}{column} \PYG{l+m+mi}{2}   \PYG{o}{|} \PYG{n}{column} \PYG{l+m+mi}{3}  \PYG{o}{|}
+\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}
+\PYG{o}{|} \PYG{n}{body} \PYG{n}{row} \PYG{l+m+mi}{2} \PYG{o}{|} \PYG{n}{Cells} \PYG{n}{may} \PYG{n}{span} \PYG{n}{columns}\PYG{o}{.}\PYG{o}{|}
+\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}
+\PYG{o}{|} \PYG{n}{body} \PYG{n}{row} \PYG{l+m+mi}{3} \PYG{o}{|} \PYG{n}{Cells} \PYG{n}{may}  \PYG{o}{|} \PYG{o}{\PYGZhy{}} \PYG{n}{Cells}   \PYG{o}{|}
+\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+} \PYG{n}{span} \PYG{n}{rows}\PYG{o}{.} \PYG{o}{|} \PYG{o}{\PYGZhy{}} \PYG{n}{contain} \PYG{o}{|}
+\PYG{o}{|} \PYG{n}{body} \PYG{n}{row} \PYG{l+m+mi}{4} \PYG{o}{|}            \PYG{o}{|} \PYG{o}{\PYGZhy{}} \PYG{n}{blocks}\PYG{o}{.} \PYG{o}{|}
+\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{+}
+\end{sphinxVerbatimintable}
+&
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{3}{\X{1}{3}|}}
+\hline
+\sphinxstyletheadfamily 
+Header 1
+&\sphinxstyletheadfamily 
+Header 2
+&\sphinxstyletheadfamily 
+Header 3
+\\
+\hline
+body row 1
+&
+column 2
+&
+column 3
+\\
+\hline
+body row 2
+&\sphinxstartmulticolumn{2}%
+\begin{varwidth}[t]{\sphinxcolwidth{2}{3}}
+Cells may span columns.
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+\sphinxstopmulticolumn
+\\
+\hline
+body row 3
+&\sphinxmultirow{2}{10}{%
+\begin{varwidth}[t]{\sphinxcolwidth{1}{3}}
+Cells may
+span rows.
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+}%
+&\sphinxmultirow{2}{11}{%
+\begin{varwidth}[t]{\sphinxcolwidth{1}{3}}
+\begin{itemize}
+\item {} 
+Cells
+
+\item {} 
+contain
+
+\item {} 
+blocks.
+
+\end{itemize}
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+}%
+\\
+\cline{1-1}
+body row 4
+&\sphinxtablestrut{10}&\sphinxtablestrut{11}\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{==}
+   \PYG{n}{Inputs}     \PYG{n}{Output}
+\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}  \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}
+  \PYG{n}{A}      \PYG{n}{B}    \PYG{n}{A} \PYG{o+ow}{or} \PYG{n}{B}
+\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{==}
+\PYG{k+kc}{False}  \PYG{k+kc}{False}  \PYG{k+kc}{False}
+\PYG{k+kc}{True}   \PYG{k+kc}{False}  \PYG{k+kc}{True}
+\PYG{k+kc}{False}  \PYG{k+kc}{True}   \PYG{k+kc}{True}
+\PYG{k+kc}{True}   \PYG{k+kc}{True}   \PYG{k+kc}{True}
+\PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{=}  \PYG{o}{==}\PYG{o}{==}\PYG{o}{==}
+\end{sphinxVerbatimintable}
+&
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstartmulticolumn{2}%
+\begin{varwidth}[t]{\sphinxcolwidth{2}{3}}
+\sphinxstyletheadfamily Inputs
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+\sphinxstopmulticolumn
+&\sphinxstyletheadfamily 
+Output
+\\
+\hline\sphinxstyletheadfamily 
+A
+&\sphinxstyletheadfamily 
+B
+&\sphinxstyletheadfamily 
+A or B
+\\
+\hline
+False
+&
+False
+&
+False
+\\
+\hline
+True
+&
+False
+&
+True
+\\
+\hline
+False
+&
+True
+&
+True
+\\
+\hline
+True
+&
+True
+&
+True
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Explicit Markup}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:explicit-markup}}
+Explicit markup blocks are used for constructs which float (footnotes), have no direct paper\sphinxhyphen{}document representation
+(hyperlink targets, comments), or require specialized processing (directives).
+They all begin with two periods and whitespace, the “explicit markup start”.
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabular}[t]{|*{2}{\X{1}{2}|}}
+\hline
+
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Footnote} \PYG{n}{references}\PYG{p}{,} \PYG{n}{like} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{n}{\PYGZus{}}\PYG{o}{.}
+\PYG{n}{Note} \PYG{n}{that} \PYG{n}{footnotes} \PYG{n}{may} \PYG{n}{get}
+\PYG{n}{rearranged}\PYG{p}{,} \PYG{n}{e}\PYG{o}{.}\PYG{n}{g}\PYG{o}{.}\PYG{p}{,} \PYG{n}{to} \PYG{n}{the} \PYG{n}{bottom} \PYG{n}{of}
+\PYG{n}{the} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{page}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]} \PYG{n}{A} \PYG{n}{numerical} \PYG{n}{footnote}\PYG{o}{.} \PYG{n}{Note}
+   \PYG{n}{there}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{s no colon after the ``]``.}
+\end{sphinxVerbatimintable}
+&
+Footnote references, like %
+\begin{footnote}[5]\sphinxAtStartFootnote
+A numerical footnote. Note
+there’s no colon after the \sphinxcode{\sphinxupquote{{]}}}.
+%
+\end{footnote}.
+Note that footnotes may get
+rearranged, e.g., to the bottom of
+the “page”.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Autonumbered} \PYG{n}{footnotes} \PYG{n}{are}
+\PYG{n}{possible}\PYG{p}{,} \PYG{n}{like} \PYG{n}{using} \PYG{p}{[}\PYG{c+c1}{\PYGZsh{}]\PYGZus{} and [\PYGZsh{}]\PYGZus{}.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{c+c1}{\PYGZsh{}] This is the first one.}
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{c+c1}{\PYGZsh{}] This is the second one.}
+
+\PYG{n}{They} \PYG{n}{may} \PYG{n}{be} \PYG{n}{assigned} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{autonumber}
+\PYG{n}{labels}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ \PYGZhy{} for instance,}
+\PYG{p}{[}\PYG{c+c1}{\PYGZsh{}fourth]\PYGZus{} and [\PYGZsh{}third]\PYGZus{}.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{c+c1}{\PYGZsh{}third] a.k.a. third\PYGZus{}}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{c+c1}{\PYGZsh{}fourth] a.k.a. fourth\PYGZus{}}
+\end{sphinxVerbatimintable}
+&
+Autonumbered footnotes are
+possible, like using \sphinxfootnotemark[17] and %
+\begin{footnote}[18]\sphinxAtStartFootnote
+This is the second one.
+%
+\end{footnote}.
+
+They may be assigned ‘autonumber
+labels’ \sphinxhyphen{} for instance,
+%
+\begin{footnote}[20]\sphinxAtStartFootnote
+a.k.a. {\hyperref[\detokenize{rst-cheatsheet/rst-cheatsheet:fourth}]{\sphinxcrossref{fourth}}}
+%
+\end{footnote} and %
+\begin{footnote}[19]\sphinxAtStartFootnote
+a.k.a. {\hyperref[\detokenize{rst-cheatsheet/rst-cheatsheet:third}]{\sphinxcrossref{third}}}
+%
+\end{footnote}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Auto}\PYG{o}{\PYGZhy{}}\PYG{n}{symbol} \PYG{n}{footnotes} \PYG{n}{are} \PYG{n}{also}
+\PYG{n}{possible}\PYG{p}{,} \PYG{n}{like} \PYG{n}{this}\PYG{p}{:} \PYG{p}{[}\PYG{o}{*}\PYG{p}{]}\PYG{n}{\PYGZus{}} \PYG{o+ow}{and} \PYG{p}{[}\PYG{o}{*}\PYG{p}{]}\PYG{n}{\PYGZus{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{o}{*}\PYG{p}{]} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{the} \PYG{n}{first} \PYG{n}{one}\PYG{o}{.}
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{o}{*}\PYG{p}{]} \PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{the} \PYG{n}{second} \PYG{n}{one}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+Auto\sphinxhyphen{}symbol footnotes are also
+possible, like this: %
+\begin{footnote}[21]\sphinxAtStartFootnote
+This is the first one.
+%
+\end{footnote} and %
+\begin{footnote}[22]\sphinxAtStartFootnote
+This is the second one.
+%
+\end{footnote}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Citation} \PYG{n}{references}\PYG{p}{,} \PYG{n}{like} \PYG{p}{[}\PYG{n}{CIT2002}\PYG{p}{]}\PYG{n}{\PYGZus{}}\PYG{o}{.}
+\PYG{n}{Note} \PYG{n}{that} \PYG{n}{citations} \PYG{n}{may} \PYG{n}{get}
+\PYG{n}{rearranged}\PYG{p}{,} \PYG{n}{e}\PYG{o}{.}\PYG{n}{g}\PYG{o}{.}\PYG{p}{,} \PYG{n}{to} \PYG{n}{the} \PYG{n}{bottom} \PYG{n}{of}
+\PYG{n}{the} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{page}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{n}{CIT2002}\PYG{p}{]} \PYG{n}{A} \PYG{n}{citation}
+   \PYG{p}{(}\PYG{k}{as} \PYG{n}{often} \PYG{n}{used} \PYG{o+ow}{in} \PYG{n}{journals}\PYG{p}{)}\PYG{o}{.}
+
+\PYG{n}{Citation} \PYG{n}{labels} \PYG{n}{contain} \PYG{n}{alphanumerics}\PYG{p}{,}
+\PYG{n}{underlines}\PYG{p}{,} \PYG{n}{hyphens} \PYG{o+ow}{and} \PYG{n}{fullstops}\PYG{o}{.}
+\PYG{n}{Case} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{n}{significant}\PYG{o}{.}
+
+\PYG{n}{Given} \PYG{n}{a} \PYG{n}{citation} \PYG{n}{like} \PYG{p}{[}\PYG{n}{this}\PYG{p}{]}\PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{one}
+\PYG{n}{can} \PYG{n}{also} \PYG{n}{refer} \PYG{n}{to} \PYG{n}{it} \PYG{n}{like} \PYG{n}{this\PYGZus{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{p}{[}\PYG{n}{this}\PYG{p}{]} \PYG{n}{here}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+Citation references, like \sphinxcite{rst-cheatsheet/rst-cheatsheet:cit2002}.
+Note that citations may get
+rearranged, e.g., to the bottom of
+the “page”.
+
+Citation labels contain alphanumerics,
+underlines, hyphens and fullstops.
+Case is not significant.
+
+Given a citation like \sphinxcite{rst-cheatsheet/rst-cheatsheet:this}, one
+can also refer to it like {\hyperref[\detokenize{rst-cheatsheet/rst-cheatsheet:this}]{\sphinxcrossref{this}}}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{External} \PYG{n}{hyperlinks}\PYG{p}{,} \PYG{n}{like} \PYG{n}{Python\PYGZus{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{n}{\PYGZus{}Python}\PYG{p}{:} \PYG{n}{http}\PYG{p}{:}\PYG{o}{/}\PYG{o}{/}\PYG{n}{www}\PYG{o}{.}\PYG{n}{python}\PYG{o}{.}\PYG{n}{org}\PYG{o}{/}
+\end{sphinxVerbatimintable}
+&
+External hyperlinks, like \sphinxhref{http://www.python.org/}{Python}%
+\begin{footnote}[23]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://www.python.org/}
+%
+\end{footnote}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+External hyperlinks, like `Python
+\PYGZlt{}http://www.python.org/\PYGZgt{}`\PYGZus{}.
+\end{sphinxVerbatimintable}
+&
+External hyperlinks, like \sphinxhref{http://www.python.org/}{Python}%
+\begin{footnote}[24]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://www.python.org/}
+%
+\end{footnote}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{Internal} \PYG{n}{crossreferences}\PYG{p}{,} \PYG{n}{like} \PYG{n}{example\PYGZus{}}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{n}{\PYGZus{}example}\PYG{p}{:}
+
+\PYG{n}{This} \PYG{o+ow}{is} \PYG{n}{an} \PYG{n}{example} \PYG{n}{crossreference} \PYG{n}{target}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+Internal crossreferences, like {\hyperref[\detokenize{rst-cheatsheet/rst-cheatsheet:example}]{\sphinxcrossref{example}}}.
+
+\phantomsection\label{\detokenize{rst-cheatsheet/rst-cheatsheet:example}}
+This is an example crossreference target.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+Python\PYGZus{} is `my favourite
+programming language`\PYGZus{}\PYGZus{}.
+
+.. \PYGZus{}Python: http://www.python.org/
+
+\PYGZus{}\PYGZus{} Python\PYGZus{}
+\end{sphinxVerbatimintable}
+&
+\sphinxhref{http://www.python.org/}{Python}%
+\begin{footnote}[25]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://www.python.org/}
+%
+\end{footnote} is \sphinxhref{http://www.python.org/}{my favourite
+programming language}%
+\begin{footnote}[26]\sphinxAtStartFootnote
+\sphinxnolinkurl{http://www.python.org/}
+%
+\end{footnote}.
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+Titles are targets, too
+=======================
+
+Implict references, like `Titles are targets, too`\PYGZus{}.
+\end{sphinxVerbatimintable}
+&\phantomsection\label{\detokenize{rst-cheatsheet/rst-cheatsheet:titles-are-targets-too}}
+Titles are targets, too
+
+Implict references, like
+{\hyperref[\detokenize{rst-cheatsheet/rst-cheatsheet:titles-are-targets-too}]{\sphinxcrossref{Titles are targets, too}}}.
+\\
+\hline\sphinxstartmulticolumn{2}%
+\begin{varwidth}[t]{\sphinxcolwidth{2}{2}}
+Directives are a general\sphinxhyphen{}purpose extension mechanism, a way of adding support for new constructs without adding
+new syntax. For a description of all standard directives, see reStructuredText Directives (\sphinxurl{http://is.gd/2Ecqh}).
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+\sphinxstopmulticolumn
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{For} \PYG{n}{instance}\PYG{p}{:}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{n}{image}\PYG{p}{:}\PYG{p}{:} \PYG{n}{magnetic}\PYG{o}{\PYGZhy{}}\PYG{n}{balls}\PYG{o}{.}\PYG{n}{jpg}
+   \PYG{p}{:}\PYG{n}{width}\PYG{p}{:} \PYG{l+m+mi}{40}\PYG{n}{pt}
+\end{sphinxVerbatimintable}
+&
+For instance:
+
+\noindent\sphinxincludegraphics[width=40bp]{{magnetic-balls}.jpg}
+\\
+\hline\sphinxstartmulticolumn{2}%
+\begin{varwidth}[t]{\sphinxcolwidth{2}{2}}
+Substitutions are like inline directives, allowing graphics and arbitrary constructs within text.
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+\sphinxstopmulticolumn
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{The} \PYG{o}{|}\PYG{n}{biohazard}\PYG{o}{|} \PYG{n}{symbol} \PYG{n}{must} \PYG{n}{be} \PYG{n}{used} \PYG{n}{on} \PYG{n}{containers} \PYG{n}{used} \PYG{n}{to}
+\PYG{n}{dispose} \PYG{n}{of} \PYG{n}{medical} \PYG{n}{waste}\PYG{o}{.}
+
+\PYG{o}{.}\PYG{o}{.} \PYG{o}{|}\PYG{n}{biohazard}\PYG{o}{|} \PYG{n}{image}\PYG{p}{:}\PYG{p}{:} \PYG{n}{biohazard}\PYG{o}{.}\PYG{n}{png}
+   \PYG{p}{:}\PYG{n}{align}\PYG{p}{:} \PYG{n}{middle}
+   \PYG{p}{:}\PYG{n}{width}\PYG{p}{:} \PYG{l+m+mi}{12}
+\end{sphinxVerbatimintable}
+&
+The \raisebox{-0.5\height}{\sphinxincludegraphics[width=12\sphinxpxdimen]{{biohazard}.png}} symbol must be used on containers used to
+dispose of medical waste.
+\\
+\hline\sphinxstartmulticolumn{2}%
+\begin{varwidth}[t]{\sphinxcolwidth{2}{2}}
+Any text which begins with an explicit markup start but doesn’t use the syntax of any of the constructs above, is a comment.
+\par
+\vskip-\baselineskip\vbox{\hbox{\strut}}\end{varwidth}%
+\sphinxstopmulticolumn
+\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{o}{.}\PYG{o}{.} \PYG{n}{This} \PYG{n}{text} \PYG{n}{will} \PYG{o+ow}{not} \PYG{n}{be} \PYG{n}{shown}
+   \PYG{p}{(}\PYG{n}{but}\PYG{p}{,} \PYG{k}{for} \PYG{n}{instance}\PYG{p}{,} \PYG{o+ow}{in} \PYG{n}{HTML} \PYG{n}{might} \PYG{n}{be}
+   \PYG{n}{rendered} \PYG{k}{as} \PYG{n}{an} \PYG{n}{HTML} \PYG{n}{comment}\PYG{p}{)}
+\end{sphinxVerbatimintable}
+&\\
+\hline
+\begin{sphinxVerbatimintable}[commandchars=\\\{\}]
+\PYG{n}{An} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{empty comment}\PYG{l+s+s2}{\PYGZdq{}} \PYG{n}{does} \PYG{o+ow}{not}
+\PYG{n}{consume} \PYG{n}{following} \PYG{n}{blocks}\PYG{o}{.}
+\PYG{p}{(}\PYG{n}{An} \PYG{n}{empty} \PYG{n}{comment} \PYG{o+ow}{is} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{..}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{with}
+\PYG{n}{blank} \PYG{n}{lines} \PYG{n}{before} \PYG{o+ow}{and} \PYG{n}{after}\PYG{o}{.}\PYG{p}{)}
+
+\PYG{o}{.}\PYG{o}{.}
+
+        \PYG{n}{So} \PYG{n}{this} \PYG{n}{block} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{lost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+        \PYG{n}{despite} \PYG{n}{its} \PYG{n}{indentation}\PYG{o}{.}
+\end{sphinxVerbatimintable}
+&
+An “empty comment” does not
+consume following blocks.
+(An empty comment is “..” with
+blank lines before and after.)
+\begin{quote}
+
+So this block is not “lost”,
+despite its indentation.
+\end{quote}
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Credits}
+\label{\detokenize{rst-cheatsheet/rst-cheatsheet:credits}}
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|}
+\hline
+
+CP Font from LiquiType:
+&
+\sphinxurl{http://www.liquitype.com/workshop/type\_design/cp-mono}
+\\
+\hline
+Magnetic Balls V2 image by fdecomite:
+&
+\sphinxurl{http://www.flickr.com/photos/fdecomite/2926556794/}
+\\
+\hline
+Sponsored by Net Managers
+&
+\sphinxurl{http://www.netmanagers.com.ar}
+\\
+\hline
+Typeset using rst2pdf
+&
+\sphinxurl{http://rst2pdf.googlecode.com}
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|T|}
+\hline
+
+© \DUrole{small}{2009 Roberto Alsina <ralsina@netmanagers.com.ar>  /  Creative Commons Attribution\sphinxhyphen{}Noncommercial\sphinxhyphen{}Share Alike 2.5 Argentina License}
+&
+\raisebox{-0.5\height}{\sphinxincludegraphics[width=8bp]{{attrib}.png}} \DUrole{small}{Based on quickref.txt from docutils}
+&
+\raisebox{-0.5\height}{\sphinxincludegraphics[width=8bp]{{noncomm}.png}} \DUrole{small}{Non\sphinxhyphen{}Commercial}
+&
+\raisebox{-0.5\height}{\sphinxincludegraphics[width=8bp]{{sharealike}.png}} \DUrole{small}{Share Alike}
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\chapter{Change Log}
+\label{\detokenize{change-log:change-log}}\label{\detokenize{change-log::doc}}
+\begin{sphinxadmonition}{warning}{Warning:}
+Changes are not being tracked until a beta\sphinxhyphen{}quality release is made.
+\end{sphinxadmonition}
+
+The change log will appear here.
+
+
+\chapter{License}
+\label{\detokenize{license:license}}\label{\detokenize{license::doc}}
+Copyright (c) 2019 Kevin Sheppard <\sphinxhref{mailto:kevin.k.sheppard@gmail.com}{kevin.k.sheppard@gmail.com}>
+
+Derived from:
+\begin{itemize}
+\item {} 
+Material for Mkdocs: Copyright (c) 2016\sphinxhyphen{}2019 Martin Donath <\sphinxhref{mailto:martin.donath@squidfunk.com}{martin.donath@squidfunk.com}>
+
+\item {} 
+Guzzle Sphinx Theme: Copyright (c) 2013 Michael Dowling <\sphinxhref{mailto:mtdowling@gmail.com}{mtdowling@gmail.com}>
+
+\end{itemize}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+\chapter{Index}
+\label{\detokenize{index:index}}
+\DUrole{xref,std,std-ref}{genindex}
+
+\begin{sphinxthebibliography}{CIT2002}
+\bibitem[CIT2002]{rst-cheatsheet/rst-cheatsheet:cit2002}
+A citation
+(as often used in journals).
+\bibitem[this]{rst-cheatsheet/rst-cheatsheet:this}
+here.
+\end{sphinxthebibliography}
 
 
 

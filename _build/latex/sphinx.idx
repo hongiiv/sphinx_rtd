@@ -1,0 +1,25 @@
+\indexentry{Polynomial (class in numpy.polynomial)@\spxentry{Polynomial}\spxextra{class in numpy.polynomial}}{19}
+\indexentry{basis() (numpy.polynomial.Polynomial class method)@\spxentry{basis()}\spxextra{numpy.polynomial.Polynomial class method}}{21}
+\indexentry{cast() (numpy.polynomial.Polynomial class method)@\spxentry{cast()}\spxextra{numpy.polynomial.Polynomial class method}}{21}
+\indexentry{convert() (numpy.polynomial.Polynomial method)@\spxentry{convert()}\spxextra{numpy.polynomial.Polynomial method}}{22}
+\indexentry{copy() (numpy.polynomial.Polynomial method)@\spxentry{copy()}\spxextra{numpy.polynomial.Polynomial method}}{22}
+\indexentry{cutdeg() (numpy.polynomial.Polynomial method)@\spxentry{cutdeg()}\spxextra{numpy.polynomial.Polynomial method}}{23}
+\indexentry{degree() (numpy.polynomial.Polynomial method)@\spxentry{degree()}\spxextra{numpy.polynomial.Polynomial method}}{23}
+\indexentry{deriv() (numpy.polynomial.Polynomial method)@\spxentry{deriv()}\spxextra{numpy.polynomial.Polynomial method}}{23}
+\indexentry{fit() (numpy.polynomial.Polynomial class method)@\spxentry{fit()}\spxextra{numpy.polynomial.Polynomial class method}}{24}
+\indexentry{fromroots() (numpy.polynomial.Polynomial class method)@\spxentry{fromroots()}\spxextra{numpy.polynomial.Polynomial class method}}{25}
+\indexentry{has\_samecoef() (numpy.polynomial.Polynomial method)@\spxentry{has\_samecoef()}\spxextra{numpy.polynomial.Polynomial method}}{25}
+\indexentry{has\_samedomain() (numpy.polynomial.Polynomial method)@\spxentry{has\_samedomain()}\spxextra{numpy.polynomial.Polynomial method}}{25}
+\indexentry{has\_sametype() (numpy.polynomial.Polynomial method)@\spxentry{has\_sametype()}\spxextra{numpy.polynomial.Polynomial method}}{26}
+\indexentry{has\_samewindow() (numpy.polynomial.Polynomial method)@\spxentry{has\_samewindow()}\spxextra{numpy.polynomial.Polynomial method}}{26}
+\indexentry{identity() (numpy.polynomial.Polynomial class method)@\spxentry{identity()}\spxextra{numpy.polynomial.Polynomial class method}}{26}
+\indexentry{integ() (numpy.polynomial.Polynomial method)@\spxentry{integ()}\spxextra{numpy.polynomial.Polynomial method}}{27}
+\indexentry{linspace() (numpy.polynomial.Polynomial method)@\spxentry{linspace()}\spxextra{numpy.polynomial.Polynomial method}}{27}
+\indexentry{mapparms() (numpy.polynomial.Polynomial method)@\spxentry{mapparms()}\spxextra{numpy.polynomial.Polynomial method}}{27}
+\indexentry{roots() (numpy.polynomial.Polynomial method)@\spxentry{roots()}\spxextra{numpy.polynomial.Polynomial method}}{28}
+\indexentry{trim() (numpy.polynomial.Polynomial method)@\spxentry{trim()}\spxextra{numpy.polynomial.Polynomial method}}{28}
+\indexentry{truncate() (numpy.polynomial.Polynomial method)@\spxentry{truncate()}\spxextra{numpy.polynomial.Polynomial method}}{29}
+\indexentry{domain (numpy.polynomial.Polynomial attribute)@\spxentry{domain}\spxextra{numpy.polynomial.Polynomial attribute}}{29}
+\indexentry{maxpower (numpy.polynomial.Polynomial attribute)@\spxentry{maxpower}\spxextra{numpy.polynomial.Polynomial attribute}}{29}
+\indexentry{nickname (numpy.polynomial.Polynomial attribute)@\spxentry{nickname}\spxextra{numpy.polynomial.Polynomial attribute}}{29}
+\indexentry{window (numpy.polynomial.Polynomial attribute)@\spxentry{window}\spxextra{numpy.polynomial.Polynomial attribute}}{30}
