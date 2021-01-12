@@ -187,3 +187,5 @@ source_parsers = {
 }
 
 source_suffix = ['.rst', '.md']
+
+nbsphinx_allow_errors = True
